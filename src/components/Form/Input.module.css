@@ -9,6 +9,10 @@
     border: 1px solid #ccc;
 }
 
+.input.invalid {
+    background-color: pink;
+}
+
 .label {
     margin-left: 2.4rem;
     transform: translateY(-2.4rem);
@@ -17,7 +21,7 @@
     padding: 0 0.5rem;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 .input:focus {
@@ -32,4 +36,10 @@
     transform: translateY(-4.5rem);
     opacity: 1;
     visibility: visible;
+}
+
+.error {
+    color: red;
+    margin-left: 2.4rem;
+    margin-bottom: 1rem;
 }
