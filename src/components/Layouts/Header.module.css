@@ -1,17 +1,20 @@
 .header {
-    background-color: transparent;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3.2rem 4.8rem;
-    position: sticky;
+    padding: 3rem 4.8rem;
+    position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 999;
+    transition: all 0.2s;
 }
 
 .header:hover {
-    background-color: white;
+    background-color: rgba(231, 224, 224, 0.39);
+    backdrop-filter: blur(50%);
 }
 
 .list {
@@ -40,8 +43,7 @@
     background-color: black;
     opacity: 0;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: all 0.4s;
+    transition: all 0.5s;
 }
 
 .link:hover::after {
