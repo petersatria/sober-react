@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from '../components/Form/Input.module.css';
+import styles from '../components/Signup/Input.module.css';
 
 const useInput = (validation) => {
     const [value, setValue] = useState('');

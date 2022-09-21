@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Homepage, Test } from './pages/index';
+import { Homepage, Test, SignupPage } from './pages/index';
 import { Provider } from 'react-redux';
 
 import store from './store/store';
-
-import Signup from './components/Signup/Signup';
 
 function App() {
     return (
@@ -13,7 +11,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Homepage />} />
                     <Route path="/test" element={<Test />} />
-                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/signup" element={<SignupPage />} />
                 </Routes>
             </BrowserRouter>
         </Provider>
