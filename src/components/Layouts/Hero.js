@@ -10,19 +10,19 @@ const sliderData = [
 const Hero = () => {
     const [slideIndex, setSlideIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(
-            () =>
-                setSlideIndex((prevState) => {
-                    let newIndex = prevState + 1;
-                    if (newIndex === sliderData.length) return 0;
-                    return newIndex;
-                }),
-            15000
-        );
+    // useEffect(() => {
+    //     const interval = setInterval(
+    //         () =>
+    //             setSlideIndex((prevState) => {
+    //                 let newIndex = prevState + 1;
+    //                 if (newIndex === sliderData.length) return 0;
+    //                 return newIndex;
+    //             }),
+    //         15000
+    //     );
 
-        return () => clearInterval(interval);
-    }, [slideIndex]);
+    //     return () => clearInterval(interval);
+    // }, [slideIndex]);
 
     const moveSlide = (index) => {
         setSlideIndex(index);

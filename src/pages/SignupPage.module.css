@@ -21,7 +21,7 @@
 .btn--cross {
     background: none;
     border: none;
-    cursor: pointer;
+    color: black;
 }
 
 .logo-cross {

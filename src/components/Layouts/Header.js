@@ -8,29 +8,39 @@ import brandLogo from '../../assets/logo-light.svg';
 
 const Header = () => {
     const navStyle = (navItem) =>
-        navItem.isActive ? `${styles.link} ${styles.actice}` : `${styles.link}`;
+        navItem.isActive ? `${styles.link} ${styles.active}` : `${styles.link}`;
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <NavLink className={navStyle}>Home</NavLink>
+                        <NavLink to="/" className={navStyle}>
+                            Home
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink className={styles.link}>Shop</NavLink>
+                        <NavLink to="/shop" className={navStyle}>
+                            Shop
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink className={styles.link}>Features</NavLink>
+                        <NavLink to="/features" className={navStyle}>
+                            Features
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink className={styles.link}>Pages</NavLink>
+                        <NavLink to="/pages" className={navStyle}>
+                            Pages
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink className={styles.link}>Blog</NavLink>
+                        <NavLink to="blog" className={navStyle}>
+                            Blog
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
@@ -42,25 +52,29 @@ const Header = () => {
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <button className={styles.btn}>
+                        <NavLink className={styles['sub-link']}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <button className={styles.btn}>Login</button>
+                        <NavLink className={styles['sub-link']}>Login</NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <button className={styles.btn}>Register</button>
+                        <NavLink to="/signup" className={styles['sub-link']}>
+                            Register
+                        </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <button className={`${styles.btn} ${styles['btn-cart']}`}>
+                        <NavLink
+                            className={`${styles['sub-link']} ${styles['sub-link--cart']}`}
+                        >
                             <FontAwesomeIcon icon={faCartShopping} />
 
                             <div className={styles.cart}>0</div>
-                        </button>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

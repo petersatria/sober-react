@@ -1,5 +1,5 @@
 .header {
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,9 +37,9 @@
     display: inline-block;
     position: absolute;
     left: 0;
-    bottom: -0.4rem;
+    bottom: -0.5rem;
     width: 100%;
-    height: 2.5px;
+    height: 2px;
     background-color: black;
     opacity: 0;
     transform: scaleX(0);
@@ -51,25 +51,21 @@
     opacity: 1;
 }
 
-.link::after.active {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    bottom: -0.4rem;
-    width: 100%;
-    height: 2.5px;
-    background-color: black;
+.active::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
-.btn {
+.sub-link {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.6rem;
+    color: black;
+    text-decoration: none;
 }
 
-.btn.btn-cart {
+.sub-link.sub-link--cart {
     display: flex;
     gap: 1rem;
     align-items: center;
