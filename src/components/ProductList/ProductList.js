@@ -1,9 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './ProductList.module.css';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const ProductList = (props) => {
+    // State
+    const [cartActive, setCartActive] = useState(false);
+
+    // Handler
+    const clickHandler = () => {
+        setCartActive((prevState) => !prevState);
+    };
+
     // Props
     const price = props.price.toLocaleString('id-ID', {
         style: 'currency',
@@ -12,7 +22,7 @@ const ProductList = (props) => {
 
     return (
         <div className={styles.container}>
-            <figure className={styles.figure}>
+            <Link className={styles.link}>
                 <img src={props.img[0]} alt="Product" className={styles.img} />
                 <img
                     src={props.img[1]}
@@ -20,10 +30,10 @@ const ProductList = (props) => {
                     className={`${styles.img} ${styles['img--2']}`}
                 />
 
-                <button className={styles.btn}>
-                    <FontAwesomeIcon icon={faCartShopping} />
+                <button onClick={clickHandler} className={styles.btn}>
+                    <FontAwesomeIcon icon={cartActive ? faCheck : faCartShopping} />
                 </button>
-            </figure>
+            </Link>
 
             <div className={styles.text}>
                 <p className={styles.name}>{props.name}</p>

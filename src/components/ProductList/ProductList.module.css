@@ -3,7 +3,9 @@
     position: relative;
 }
 
-.figure {
+.link {
+    position: relative;
+    display: inline-block;
     width: inherit;
     height: 30rem;
     margin-bottom: 2.4rem;
@@ -20,15 +22,12 @@
 }
 
 .img--2 {
-    transform: scaleY(1);
-    /* transform-origin: bottom; */
     opacity: 1;
-    transition: all 0.4s 0.1s;
+    transition: all 0.3s;
 }
 
-.figure:hover .img--2 {
+.link:hover .img--2 {
     opacity: 0;
-    transform: scaleY(0);
 }
 
 .text {
@@ -50,26 +49,29 @@
 
 .btn {
     position: absolute;
+    z-index: 999;
     color: white;
     background-color: black;
     padding: 2rem;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.5s 0.2s;
     opacity: 0;
     visibility: hidden;
-    z-index: -1;
     border: 1px solid white;
+    transition: all 0.4s 0.2s;
 }
 
-.figure:hover .btn {
+.link:hover .btn:hover {
+    transform: translate(-50%, -3rem) scale(1.1);
+}
+
+.link:hover .btn {
     transform: translate(-50%, -3rem);
     opacity: 1;
     visibility: visible;
-    z-index: 99;
 }
 
 .tags {

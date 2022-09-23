@@ -1,63 +1,63 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+
 import styles from './Hero.module.css';
 
-const sliderData = [
-    { key: +Math.random(), heading: 'Man Collection', linkMsg: 'Shop Now' },
-    { key: +Math.random(), heading: 'Woman Collection', linkMsg: 'Shop Now' },
-];
-
-const Hero = () => {
-    const [slideIndex, setSlideIndex] = useState(0);
-
-    // useEffect(() => {
-    //     const interval = setInterval(
-    //         () =>
-    //             setSlideIndex((prevState) => {
-    //                 let newIndex = prevState + 1;
-    //                 if (newIndex === sliderData.length) return 0;
-    //                 return newIndex;
-    //             }),
-    //         15000
-    //     );
-
-    //     return () => clearInterval(interval);
-    // }, [slideIndex]);
-
-    const moveSlide = (index) => {
-        setSlideIndex(index);
+const Hero2 = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        speed: 2000,
+        pauseOnHover: false,
+        pauseOnFocus: true,
+        appendDots: (dots) => (
+            <div
+                style={{
+                    transform: 'translateY(-6rem)',
+                    backgroundColor: 'transparent',
+                }}
+            >
+                <ul
+                    style={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    {dots}
+                </ul>
+            </div>
+        ),
     };
 
     return (
-        <section className={styles.slider}>
-            {sliderData.map((slide, i) => (
-                <div
-                    key={slide.key}
-                    className={`${`${styles.slide} ${styles[`slide-${i}`]}`} ${
-                        slideIndex === i ? `${styles['slide-active']}` : ''
-                    }`}
-                >
+        <Slider {...settings}>
+            <div className={styles.slider}>
+                <div className={`${styles.slide} ${styles['slide-0']}`}>
                     <div className={styles.content}>
-                        <h2 className={styles.heading}>{slide.heading}</h2>
+                        <h2 className={styles.heading}>Man Collection</h2>
 
-                        <Link className={styles.link}>{slide.linkMsg}</Link>
+                        <Link className={styles.link}>Shop Now</Link>
                     </div>
                 </div>
-            ))}
-
-            <div className={styles.dots}>
-                {sliderData.map((slide, i) => (
-                    <button
-                        key={slide.key}
-                        onClick={() => moveSlide(i)}
-                        className={`${styles.dot} ${
-                            slideIndex === i ? `${styles['dot-active']}` : ''
-                        }`}
-                    ></button>
-                ))}
             </div>
-        </section>
+
+            <div className={styles.slider}>
+                <div className={`${styles.slide} ${styles['slide-1']}`}>
+                    <div className={styles.content}>
+                        <h2 className={styles.heading}>Woman Collection</h2>
+
+                        <Link className={styles.link}>Shop Now</Link>
+                    </div>
+                </div>
+            </div>
+        </Slider>
     );
 };
 
-export default Hero;
+export default Hero2;

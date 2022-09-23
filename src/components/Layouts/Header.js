@@ -1,16 +1,37 @@
-import { NavLink } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.css';
 import brandLogo from '../../assets/logo-light.svg';
+import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+    const [headerTransparant, setHeaderTransparant] = useState(true);
+
+    useEffect(() => {
+        const scrollHandler = () => {
+            if (window.scrollY > 90) return setHeaderTransparant(false);
+            if (window.scrollY === 0) return setHeaderTransparant(true);
+        };
+
+        window.addEventListener('scroll', scrollHandler);
+
+        return () => window.removeEventListener('scroll', scrollHandler);
+    }, []);
+
+    // Class
     const navStyle = (navItem) =>
         navItem.isActive ? `${styles.link} ${styles.active}` : `${styles.link}`;
+
     return (
-        <header className={styles.header}>
+        <header
+            className={
+                headerTransparant
+                    ? styles.header
+                    : `${styles.header} ${styles['header--active']}`
+            }
+        >
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>

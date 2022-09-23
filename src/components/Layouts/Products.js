@@ -1,5 +1,4 @@
-import ProductList from '../Products/ProductList';
-// import ProductDisplay from '../Products/ProductDisplay';
+import ProductList from '../ProductList/ProductList';
 
 import styles from './Products.module.css';
 
@@ -52,7 +51,7 @@ const ProductsBestSeller = () => {
                 </div>
 
                 <button onClick={clickHandler} className={styles.btn}>
-                    {showAllProducts ? 'Top Products' : 'All Products'}
+                    {showAllProducts ? 'Best of This Week' : 'All Products'}
                 </button>
             </section>
         </>
