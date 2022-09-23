@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import styles from '../components/Signup/Input.module.css';
+import styles from '../components/GeneralUI/Input.module.css';
 
-const useInput = (validation) => {
+const useInput = (validation = () => {}) => {
     const [value, setValue] = useState('');
     const [isTouch, setIsTouch] = useState(false);
 

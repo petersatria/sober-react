@@ -1,15 +1,13 @@
-import { Outlet } from 'react-router-dom';
-import Header from '../components/Layouts/Header';
 import Hero from '../components/Layouts/Hero';
-import ProductCategory from '../components/Layouts/ProductCategory';
+import Products from '../components/Layouts/Products';
+import Newsletter from '../components/Layouts/Newsletter';
 
 export default function Homepage() {
     return (
         <>
-            <Header />
             <Hero />
-            <ProductCategory />
-            <Outlet />
+            <Products />
+            <Newsletter />
         </>
     );
 }

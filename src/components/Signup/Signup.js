@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-import { NavLink } from 'react-router-dom';
 import useFetch from '../../hooks/use-fetch';
-import Form from './Form';
-import Input from './Input';
+
+import Form from '../GeneralUI/Form';
+import Input from '../GeneralUI/Input';
+import ValidationFunction from '../GeneralUI/ValidationFunction';
 
 import styles from './Signup.module.css';
 
@@ -18,10 +19,10 @@ const Signup = () => {
     const birthdateInputRef = useRef();
 
     // Validation Function
-    const notEmptyValidation = (value) => value.length > 0;
-    const emailValidation = (value) => value.includes('@') && !value.includes(' ');
-    const passwordValidation = (value) => value.length > 6;
-    const birthdateValidation = (value) => new Date(value).getTime() < Date.now();
+    // const notEmptyValidation = (value) => value.length > 0;
+    // const emailValidation = (value) => value.includes('@') && !value.includes(' ');
+    // const passwordValidation = (value) => value.length > 6;
+    // const birthdateValidation = (value) => new Date(value).getTime() < Date.now();
 
     // Handler
     const submitFormHandler = (e) => {
@@ -80,7 +81,7 @@ const Signup = () => {
                 <div className={styles['form-group']}>
                     <Input
                         ref={nameInputRef}
-                        validation={notEmptyValidation}
+                        validation={ValidationFunction.notEmptyValidation}
                         type="text"
                         label="Name"
                         errorMsg="Name must not empty"
@@ -88,21 +89,21 @@ const Signup = () => {
 
                     <Input
                         ref={usernameInputRef}
-                        validation={notEmptyValidation}
+                        validation={ValidationFunction.notEmptyValidation}
                         type="text"
                         label="Username"
                         errorMsg="Username must not empty"
                     />
                     <Input
                         ref={emailInputRef}
-                        validation={emailValidation}
+                        validation={ValidationFunction.emailValidation}
                         type="email"
                         label="Email Address"
                         errorMsg="Please input valid email"
                     />
                     <Input
                         ref={passwordInputRef}
-                        validation={passwordValidation}
+                        validation={ValidationFunction.passwordValidation}
                         type="password"
                         label="Password"
                         errorMsg="Password must have at least 7 character"
@@ -110,7 +111,7 @@ const Signup = () => {
 
                     <Input
                         ref={birthdateInputRef}
-                        validation={birthdateValidation}
+                        validation={ValidationFunction.birthdateValidation}
                         type="date"
                         label="Birtdate"
                         errorMsg="Birthdate must earlier than today"

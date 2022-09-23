@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Homepage, SignupPage } from './pages/index';
-import ProductsBestSeller from './components/Layouts/ProductsBestSeller';
+import { Mainpage, Homepage, SignupPage } from './pages/index';
 import { Provider } from 'react-redux';
 
 import store from './store/store';
@@ -10,10 +9,11 @@ function App() {
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Navigate to="/home/best-sellers" />} />
+                    <Route path="/" element={<Navigate to="/main/home" />} />
 
-                    <Route path="/home/*" element={<Homepage />}>
-                        <Route path="best-sellers" element={<ProductsBestSeller />} />
+                    <Route path="/main/*" element={<Mainpage />}>
+                        <Route path="home" element={<Homepage />} />
+                        <Route path="shop" element={<h1>shop</h1>} />
                     </Route>
 
                     <Route path="/signup" element={<SignupPage />} />

@@ -5,16 +5,23 @@
 
 .input {
     padding: 1rem 2rem;
-    border-radius: 10000px;
-    border: 1px solid #ccc;
-}
-
-.input.invalid {
-    background-color: pink;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-bottom 0.3s;
 }
 
 .input.invalid::placeholder {
     color: red;
+}
+
+.input:focus,
+.input:hover {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
 }
 
 .label {
@@ -25,14 +32,6 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s;
-}
-
-.input:focus {
-    outline: 1px solid #999;
-}
-
-.input:focus::placeholder {
-    opacity: 0;
 }
 
 .input:focus + .label {

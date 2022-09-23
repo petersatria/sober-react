@@ -14,25 +14,25 @@ const Header = () => {
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <NavLink to="/" className={navStyle}>
+                        <NavLink to="home" className={navStyle}>
                             Home
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="/shop" className={navStyle}>
+                        <NavLink to="shop" className={navStyle}>
                             Shop
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="/features" className={navStyle}>
+                        <NavLink to="features" className={navStyle}>
                             Features
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="/pages" className={navStyle}>
+                        <NavLink to="pages" className={navStyle}>
                             Pages
                         </NavLink>
                     </li>
