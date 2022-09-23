@@ -3,30 +3,8 @@ import { useDispatch } from 'react-redux'
 export default function Test(){
     const dispatch = useDispatch()
     const data = [
-        {productId:'1', cartId:'', quantity:1, 
-        product:{
-            id:'1',
-            name:'Ear Headphones',
-            detail:'String',
-            thumbnail:'https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1-13-433x516.jpg',
-            recommendation:'Boolean',
-            price:'180.00',
-            images:[],
-            stock:'Number',
-            deleted:'Boolean'}
-        },
-        {productId:'2', cartId:'', quantity:1, 
-        product:{
-            id:'2',
-            name:'	Crewneck Blouse',
-            detail:'String',
-            thumbnail:'https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1_1-433x516.jpg',
-            recommendation:'Boolean',
-            price:'215.00',
-            images:[],
-            stock:'Number',
-            deleted:'Boolean'}
-        }
+        {productId:'6329b91cd5dfd5b94b396902', cartId:'632cb38f55b627d11bc08d8f', quantity:1, product:[{_id:'6329b91cd5dfd5b94b396902'}]},
+        {productId:'6329ba4fd5dfd5b94b396906', cartId:'632cb38f55b627d11bc08d8f', quantity:1, product:[{_id:'6329ba4fd5dfd5b94b396906'}]},
     ]
     function product(data){
         dispatch(addCart(data))
