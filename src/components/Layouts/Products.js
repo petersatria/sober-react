@@ -3,11 +3,29 @@ import ProductList from '../ProductList/ProductList';
 import styles from './Products.module.css';
 
 import dumData from '../../assets/dummy_data.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useFetch from '../../hooks/use-fetch';
 
 const ProductsBestSeller = () => {
     // State
     const [showAllProducts, setShowAllProducts] = useState(false);
+    const [products, setProducts] = useState([]);
+    const { sendRequest } = useFetch(true);
+
+    // Side Effect
+    useEffect(() => {
+        const dataHandler = (data) => {
+            console.log(data);
+            setProducts(data);
+        };
+
+        const reqConfig = {
+            url: 'http://localhost:5000/api/products',
+            method: 'GET',
+        };
+
+        sendRequest(reqConfig, dataHandler);
+    }, [sendRequest]);
 
     // Handler
     const clickHandler = () => {
@@ -15,7 +33,7 @@ const ProductsBestSeller = () => {
     };
 
     // Component
-    const allProduct = dumData.data.map((product) => (
+    const allProduct = products.map((product) => (
         <ProductList
             key={product._id}
             img={product.images}
@@ -25,7 +43,7 @@ const ProductsBestSeller = () => {
         />
     ));
 
-    const topProducts = dumData.data
+    const topProducts = products
         .slice(0, 5)
         .map((product) => (
             <ProductList
