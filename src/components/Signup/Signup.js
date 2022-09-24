@@ -18,12 +18,6 @@ const Signup = () => {
     const passwordInputRef = useRef();
     const birthdateInputRef = useRef();
 
-    // Validation Function
-    // const notEmptyValidation = (value) => value.length > 0;
-    // const emailValidation = (value) => value.includes('@') && !value.includes(' ');
-    // const passwordValidation = (value) => value.length > 6;
-    // const birthdateValidation = (value) => new Date(value).getTime() < Date.now();
-
     // Handler
     const submitFormHandler = (e) => {
         e.preventDefault();

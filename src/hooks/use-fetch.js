@@ -24,7 +24,8 @@ const useFetch = (pending = false) => {
 
         try {
             const res = await axios(reqConfig);
-            dataHandler(res.data.data);
+            console.log(res.data);
+            dataHandler(res.data);
 
             dispatch({ type: 'SUCCESS' });
         } catch (err) {

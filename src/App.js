@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Mainpage, Homepage, SignupPage } from './pages/index';
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard/Dashboard';
+import FormDashboard from './components/Dashboard/FormDashboard';
 
 import store from './store/store';
 
@@ -22,7 +23,9 @@ function App() {
 
                     <Route path="/signup" element={<SignupPage />} />
 
-                    <Route path="/admin" element={<Dashboard />} />
+                    <Route path="/admin" element={<Dashboard />}>
+                        <Route path="edit/:productId" element={<FormDashboard />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </Provider>

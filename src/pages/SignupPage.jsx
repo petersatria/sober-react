@@ -7,7 +7,7 @@ import HeaderV2 from '../components/Layouts/HeaderV2';
 const SignupPage = () => {
     return (
         <div className={styles.container}>
-            <HeaderV2 heading="My Account" />
+            <HeaderV2 heading="My Account" path="/" />
 
             <main className={styles.main}>
                 <div>

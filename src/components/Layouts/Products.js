@@ -15,8 +15,8 @@ const ProductsBestSeller = () => {
     // Side Effect
     useEffect(() => {
         const dataHandler = (data) => {
-            console.log(data);
-            setProducts(data);
+            console.log(data.data);
+            setProducts(data.data);
         };
 
         const reqConfig = {

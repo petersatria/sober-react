@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.table {
+    max-width: 140rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, max-content) 30rem repeat(6, min-content);
+    overflow-x: scroll;
+}
+
+.table *:nth-child(even) {
+    background-color: rgba(238, 238, 238, 0.379);
+}
+
+.table .head {
+    font-size: 2rem;
+    text-align: center;
+    padding: 3.2rem 2.4rem;
+    border-bottom: 1px solid #999;
+    background-color: black;
+    color: white;
+}
+
+.head.headless {
+    background-color: white;
+    border-bottom: none;
+}
+
+.col {
+    font-size: 1.2rem;
+    padding: 3.2rem 2.4rem;
+}
+
+.table .btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    background-color: white;
+    color: black;
+    align-self: start;
+    cursor: pointer;
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import styles from '../components/GeneralUI/Input.module.css';
 
-const useInput = (validation = () => {}) => {
+const useInput = (validation = () => true) => {
     const [value, setValue] = useState('');
     const [isTouch, setIsTouch] = useState(false);
 
