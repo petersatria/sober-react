@@ -1,0 +1,13 @@
+.test{
+    height: 600px;
+    background-color: red;
+}
+
+.contentWrapper{
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: #909097;
+}
+

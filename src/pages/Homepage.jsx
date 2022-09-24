@@ -3,7 +3,9 @@ import Header from '../components/Layouts/Header';
 export default function Homepage() {
     return (
         <>
-            <Header />
+            <div>
+                <h1>Hello</h1>
+            </div>
         </>
     );
 }

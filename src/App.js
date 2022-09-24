@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Homepage, Test, SignupPage } from './pages/index';
+import { Homepage, Test, SignupPage, ProfilePage } from './pages/index';
+import{ ProfileEdit,ProfileDetail } from './components/Profile'
 import { Provider } from 'react-redux';
 
 import store from './store/store';
@@ -12,6 +13,10 @@ function App() {
                     <Route path="/" element={<Homepage />} />
                     <Route path="/test" element={<Test />} />
                     <Route path="/signup" element={<SignupPage />} />
+                    <Route path="profile/:id" element={<ProfilePage />} >
+                        <Route index element={<ProfileDetail />} />
+                        <Route path={'settings'} element={<ProfileEdit/>}/>
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </Provider>

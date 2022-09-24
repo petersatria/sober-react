@@ -1,0 +1,15 @@
+.formEdit{
+    font-weight: 500;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: #909097;
+}
+
+.formEdit input{
+    height: 4rem;
+}
+
+.formEdit button{
+    width: 10rem;
+    height: 3rem;
+}
