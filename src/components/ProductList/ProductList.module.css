@@ -1,0 +1,105 @@
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+    width: inherit;
+    height: 30rem;
+    margin-bottom: 2.4rem;
+    position: relative;
+}
+
+.img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.img--2 {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.link:hover .img--2 {
+    opacity: 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.name {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn {
+    position: absolute;
+    z-index: 999;
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid white;
+    transition: all 0.4s 0.2s;
+}
+
+.link:hover .btn:hover {
+    transform: translate(-50%, -3rem) scale(1.1);
+}
+
+.link:hover .btn {
+    transform: translate(-50%, -3rem);
+    opacity: 1;
+    visibility: visible;
+}
+
+.tags {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.hot,
+.new,
+.discount {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.hot {
+    background-color: rgb(230, 89, 89);
+}
+
+.new {
+    background-color: rgb(245, 115, 68);
+}
+
+.discount {
+    background-color: rgb(154, 248, 12);
+}

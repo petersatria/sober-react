@@ -1,0 +1,248 @@
+{
+    "message": "succes",
+    "data": [
+        {
+            "_id": "6328926679f6fa8ae510a125",
+            "name": "Jacket",
+            "detail": "Jacket for Winter",
+            "thumbnail": "cold",
+            "recommendation": true,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1_1-4.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/3-10.jpg"
+            ],
+            "stock": 3,
+            "deleted": false
+        },
+        {
+            "_id": "6328938b79f6fa8ae510a127",
+            "name": "Blue Raincoat",
+            "detail": "Blue Raincoat Desc",
+            "thumbnail": "cold",
+            "recommendation": true,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/2-2.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1-2.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "6329cbd7788297a4be666143",
+            "name": "Sweat Hoodie Retsleting Lengan Panjang",
+            "detail": "Desain modern untuk jaket hoodie klasik. Jaket fungsional dan nyaman untuk pria dan wanita, cocok dikenakan ke mana saja.",
+            "thumbnail": "hoodie",
+            "recommendation": true,
+            "price": 499000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/419503/item/idgoods_09_419503.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub17.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub18.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub19.jpg?width=1600&impolicy=quality_75"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632aecfaf4b446ceb8b699a4",
+            "name": "Printed T-shirt BLACK/TOADSTOOLS\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": false,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632b210ff4b446ceb8b699a5",
+            "name": "Printed T-shirt\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": false,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "6328926679f6fa8ae510a",
+            "name": "Jacket",
+            "detail": "Jacket for Winter",
+            "thumbnail": "cold",
+            "recommendation": false,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1_1-4.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/3-10.jpg"
+            ],
+            "stock": 3,
+            "deleted": false
+        },
+        {
+            "_id": "6328938b79f6fa8ae510a",
+            "name": "Blue Raincoat",
+            "detail": "Blue Raincoat Desc",
+            "thumbnail": "cold",
+            "recommendation": true,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/2-2.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1-2.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "6329cbd7788297a4be666",
+            "name": "Sweat Hoodie Retsleting Lengan Panjang",
+            "detail": "Desain modern untuk jaket hoodie klasik. Jaket fungsional dan nyaman untuk pria dan wanita, cocok dikenakan ke mana saja.",
+            "thumbnail": "hoodie",
+            "recommendation": true,
+            "price": 499000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/419503/item/idgoods_09_419503.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub17.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub18.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub19.jpg?width=1600&impolicy=quality_75"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632aecfaf4b446ceb8b69",
+            "name": "Printed T-shirt BLACK/TOADSTOOLS\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": true,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632b210ff4b446ceb8b69",
+            "name": "Printed T-shirt\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": true,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "6328926679f6fa8ae5",
+            "name": "Jacket",
+            "detail": "Jacket for Winter",
+            "thumbnail": "cold",
+            "recommendation": true,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1_1-4.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/3-10.jpg"
+            ],
+            "stock": 3,
+            "deleted": false
+        },
+        {
+            "_id": "6328938b79f6fa8ae5",
+            "name": "Blue Raincoat",
+            "detail": "Blue Raincoat Desc",
+            "thumbnail": "cold",
+            "recommendation": true,
+            "price": 1000000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/2-2.jpg",
+                "https://demo.uix.store/sober/wp-content/uploads/sites/2/2016/07/1-2.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "6329cbd7788297a4be",
+            "name": "Sweat Hoodie Retsleting Lengan Panjang",
+            "detail": "Desain modern untuk jaket hoodie klasik. Jaket fungsional dan nyaman untuk pria dan wanita, cocok dikenakan ke mana saja.",
+            "thumbnail": "hoodie",
+            "recommendation": false,
+            "price": 499000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/419503/item/idgoods_09_419503.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub17.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub18.jpg?width=1600&impolicy=quality_75",
+                "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/419503/sub/goods_419503_sub19.jpg?width=1600&impolicy=quality_75"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632aecfaf4b446ceb8",
+            "name": "Printed T-shirt BLACK/TOADSTOOLS\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": true,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        },
+        {
+            "_id": "632b210ff4b446ceb8",
+            "name": "Printed T-shirt\n\n\n",
+            "detail": "T-shirt in soft cotton jersey with a round neckline and a print motif.\n\n",
+            "thumbnail": "t-shirt",
+            "recommendation": false,
+            "price": 199000,
+            "discountId": "632892f279f6fa8ae510a126",
+            "images": [
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/a6b4417341c4d701b2a224870d384a1ae5f47d2e_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/20ad70366e2208eb036c6cf7820263bb31e8fa62_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/5000af2ff5827b92794dbc08b13f1f8972ca2c7f_xxl-1.jpg",
+                "https://d29c1z66frfv6c.cloudfront.net/pub/media/catalog/product/large/4a2311fc61c768febc1ccb045a857ed510af0e73_xxl-1.jpg"
+            ],
+            "stock": 13,
+            "deleted": false
+        }
+    ]
+}
