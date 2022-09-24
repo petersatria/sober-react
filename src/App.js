@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Homepage, Test, ProductDetail, ProductList } from './pages/index'
+import { Homepage, Test, ProductDetail, ProductList, OrderList } from './pages/index'
 import { Provider } from 'react-redux'
 import store from './store/store'
 function App() {
@@ -15,6 +15,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/order-list" element={<OrderList />} />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -1,25 +1,20 @@
 import './style.css'
 import styles from './product.module.css'
 
-
-const Product = ({ products, isLoading }) => {
-
-	console.log('loading', isLoading)
-
-	const overlayStyles = {
-		backgroundColor: "#7C7C80"
-	};
+const Product = ({ product, isLoading }) => {
 
 	return (
 		<>
-			{products.map(product => (
-				<div key={Math.random().toString()} className="col mb-5">
+			{!isLoading &&
+				<div className="col mb-5">
 					<div className={`card h-100 border-0 ${styles.wrapperProduct}`}>
 						<a href={`/products/${product._id}`}>
 							<div className={`card-img-top`}>
-								{/* {isLoading ? <div style={{ overlayStyles }} /> : <img className={styles.productImg} src={product.images[0]} alt="" />} */}
-								<img className={styles.productImg} src={product.images[0]} alt="" />
-								<img className={` ${styles.productHover}`} src={product.images[1]} alt="" />
+								<div>
+									<img className={` ${styles.productImg}`} src={product.images[0]} alt="" />
+									<img className={` ${styles.productHover}`} src={product.images[1]} alt="" />
+								</div>
+
 							</div>
 						</a>
 						<div className={`card-body ${styles.productDesc}`} >
@@ -28,12 +23,9 @@ const Product = ({ products, isLoading }) => {
 						</div>
 					</div>
 				</div>
-			))}
+			}
 		</>
-
-
 	)
-
 }
 
 export default Product
