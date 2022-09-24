@@ -19,6 +19,8 @@ function ProfileEdit() {
               <hr/>
           </div>
           <div className='card-body bg-white'>
+            <h4>Change Password</h4>
+            <br/>
           <div className='row'>
             <div className='col-6'>
               <Form className={style.formEdit}>
