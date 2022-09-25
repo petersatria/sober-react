@@ -29,10 +29,10 @@
     color: white;
     margin-left: 0.5vw;
     background-color: black;
+    color: white;
     border-radius: 50%;
-    width: 23px;
-    height: 23px;
-    padding:0 0 1.5px 1px;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +75,7 @@
     margin: 0 20px;
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 

@@ -40,12 +40,12 @@ export default function Cart(){
             {/* <Test/> */}
             {/* <Header/> */}
             <div className={styles.subHeader}>
-                <div className={styles.subHeaderText}>
+                <div className={styles.subHeaderText} style={{fontSize:'1.4rem', marginLeft:'9vw'}}>
                     Shopping Cart 
                     <div className={styles.cartNumber}>{carts.length}</div>
                 </div>
             </div>
-                <div className={`${styles.cartContent} mt-5`}>
+                <div className={`${styles.cartContent} mt-5`} style={{fontSize:'1.4rem'}}>
                     <table className={`${styles.tableCart} w-50`}>
                         <thead>
                             <tr>

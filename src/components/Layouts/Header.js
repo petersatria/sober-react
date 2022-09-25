@@ -5,9 +5,11 @@ import styles from './Header.module.css';
 import brandLogo from '../../assets/logo-light.svg';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 const Header = () => {
     const [headerTransparant, setHeaderTransparant] = useState(true);
+    const {carts} = useSelector(state=>state.cart)
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -94,7 +96,7 @@ const Header = () => {
                         >
                             <FontAwesomeIcon icon={faCartShopping} />
 
-                            <div className={styles.cart}>0</div>
+                            <div className={styles.cart}>{carts.length}</div>
                         </NavLink>
                     </li>
                 </ul>

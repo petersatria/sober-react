@@ -11,9 +11,18 @@ import Dashboard from './components/Dashboard/Dashboard';
 import FormDashboard from './components/Dashboard/FormDashboard';
 import store from './store/store'
 import Header from './components/Layouts/Header'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { getCart } from './store/actions/CartAction'
 
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(getCart())
+  },[])
+
   return (
       <BrowserRouter>
         <Header/>
