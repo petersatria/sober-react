@@ -2,14 +2,13 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
   Navigate
 } from "react-router-dom";
-import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage } from './pages/index'
-import { Provider } from 'react-redux';
+import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage } from './pages/index'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ProfileEdit, ProfileDetail } from './components/Profile'
 import Dashboard from './components/Dashboard/Dashboard';
 import FormDashboard from './components/Dashboard/FormDashboard';
-import store from './store/store'
 import Header from './components/Layouts/Header'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
@@ -19,9 +18,9 @@ import { getCart } from './store/actions/CartAction'
 function App() {
   const dispatch = useDispatch()
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getCart())
-  },[])
+  }, [])
 
   return (
     <BrowserRouter>
@@ -37,7 +36,10 @@ function App() {
         </Route>
 
         <Route path="/signup" element={<SignupPage />} />
-
+        <Route path="profile/:id" element={<ProfilePage />} >
+          <Route index path={'details'} element={<ProfileDetail />} />
+          <Route path={'settings'} element={<ProfileEdit />} />
+        </Route>
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormDashboard />} />
         </Route>

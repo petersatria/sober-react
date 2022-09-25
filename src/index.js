@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
 import store from './store/store'
 import { Provider } from 'react-redux';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
