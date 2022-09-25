@@ -20,22 +20,23 @@ export const addCart=(data, userId='62dd766bcf569a60ceded351')=>{
     return async (dispatch, state)=>{
         try {
             const { carts } = state().cart
-            const findProductInCart = carts.filter((val)=>val.productId===data.product[0]._id)
+            const findProductInCart = carts.filter((val)=>val.productId==data.productId)
             
             if(findProductInCart.length>0){
                 const newQuantity = {...findProductInCart[0], quantity:findProductInCart[0].quantity+1}
-                const filterData = carts.filter((val)=>val.productId!==data.product[0]._id).concat(newQuantity)
+                const filterData = carts.filter((val)=>val.productId!==data.productId).concat(newQuantity)
                 await axios.patch(`http://localhost:5000/cart`, {cartId:data.cartId, productId:data.productId, quantity:findProductInCart[0].quantity+1})
                 dispatch({
                     type:'CHANGE_QUANTITY',
                     payload:filterData
                 })
             }else{
-                const carts = await axios.post(`http://localhost:5000/cart`, {userId, productId:data.productId, quantity:1})
+                const carts = await axios.post(`http://localhost:5000/cart`, {userId, productId:data.productId, quantity:1, cartId:data.cartId})
                 dispatch({
                     type:'ADD_TO_CART',
                     payload:carts.data.carts
                 })
+
             }
         } catch (error) {
             console.log(error)

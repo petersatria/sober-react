@@ -4,14 +4,26 @@ import { faCartShopping, faCheck } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductList.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../store/actions/CartAction'
 
 const ProductList = (props) => {
+    const dispatch = useDispatch()
     // State
     const [cartActive, setCartActive] = useState(false);
+    const { product } = props
 
     // Handler
     const clickHandler = () => {
-        setCartActive((prevState) => !prevState);
+        setCartActive((prevState) => true);
+        const dataCart = {
+            productId:product._id,
+            quantity:1,
+            cartId:`632cb38f55b627d11bc08d8f`
+        }
+
+        dispatch(addCart(dataCart))
+
     };
 
     // Props
@@ -19,6 +31,7 @@ const ProductList = (props) => {
         style: 'currency',
         currency: 'IDR',
     });
+
 
     return (
         <div className={styles.container}>
