@@ -1,19 +1,14 @@
-import { useSelector,useDispatch } from 'react-redux'
-import { AddProductExample } from '../store/actions/ProductAction'
-import { useEffect } from 'react'
-export default function Homepage(){
-    const state = useSelector(state=>state)
-    const dispatch = useDispatch()
-    
-    useEffect(()=>{
-        dispatch(AddProductExample())
-    },[])   
+// import Hero from '../components/Layouts/Hero';
+import Hero from '../components/Layouts/Hero';
+import Products from '../components/Layouts/Products';
+import Newsletter from '../components/Layouts/Newsletter';
 
-    console.log(state)
-
-    return(
+export default function Homepage() {
+    return (
         <>
-            <h1>Hello Homepage</h1>
+            <Hero />
+            <Products />
+            <Newsletter />
         </>
-    )
+    );
 }
