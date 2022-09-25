@@ -13,6 +13,9 @@ import axios from "axios";
 import styles from './product.module.css'
 import './style.css'
 
+import { useDispatch } from 'react-redux'
+import { addCart } from '../../store/actions/CartAction'
+
 const ProductDetail = (props) => {
 	const [items, setItems] = useState(1);
 	const [product, setProduct] = useState('')
@@ -23,7 +26,7 @@ const ProductDetail = (props) => {
 		"price": 0,
 		"images": []
 	}])
-
+	const dispatch = useDispatch()
 	// console.log(product, 'test')
 
 	const [isLoading, setIsLoading] = useState(true)
@@ -48,10 +51,9 @@ const ProductDetail = (props) => {
 	const addToCartHandler = async () => {
 		// console.log("add to cart", items)
 
-		const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
+		// const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
 
-		console.log(post)
-
+		dispatch(addCart({ productId: id, quantity: items}))
 		window.location.assign('/cart')
 	}
 
