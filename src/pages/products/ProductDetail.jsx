@@ -23,6 +23,8 @@ const ProductDetail = (props) => {
 		"images": []
 	}])
 
+	console.log(product,'test')
+
 	const [isLoading, setIsLoading] = useState(true)
 	const { id } = useParams()
 
@@ -54,7 +56,7 @@ const ProductDetail = (props) => {
 	const getProduct = async () => {
 		try {
 			const { data } = await axios.get(`http://localhost:5000/api/product/${id}`)
-			setProduct(data.data)
+			setProduct(data.product)
 			setProductImg(data.data.images)
 
 		} catch (error) {

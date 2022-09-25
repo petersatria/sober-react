@@ -6,7 +6,7 @@ import Footer from '../components/Layouts/Footer';
 export default function Mainpage() {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <Outlet />
             <Footer />
         </>

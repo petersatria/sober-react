@@ -32,6 +32,8 @@ const ProductsBestSeller = () => {
         setShowAllProducts((prevState) => !prevState);
     };
 
+    console.log(products, 'asd')
+
     // Component
     const allProduct = products.map((product) => (
         <ProductList
