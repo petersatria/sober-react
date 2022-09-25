@@ -32,8 +32,6 @@ const ProductsBestSeller = () => {
         setShowAllProducts((prevState) => !prevState);
     };
 
-    console.log(products, 'asd')
-
     // Component
     const allProduct = products.map((product) => (
         <ProductList
@@ -42,6 +40,7 @@ const ProductsBestSeller = () => {
             name={product.name}
             price={product.price}
             hot={product.recommendation}
+            product={product}
         />
     ));
 
@@ -54,6 +53,7 @@ const ProductsBestSeller = () => {
                 name={product.name}
                 price={product.price}
                 hot={product.recommendation}
+                product={product}
             />
         ));
 
