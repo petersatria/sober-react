@@ -1,8 +1,9 @@
-import { Test } from './index'
 import styles from '../css/Cart.module.css'
+import { Test } from './index'
 import { changeQty, deleteProduct,getCart } from '../store/actions/CartAction'
 import { useSelector,useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+import Header from '../components/Layouts/Header'
 export default function Cart(){
     const { carts } = useSelector(state=>state.cart)
     const dispatch = useDispatch()
@@ -36,7 +37,8 @@ export default function Cart(){
     
     return(
         <div className={styles.containerCart}>
-            <Test/>
+            {/* <Test/> */}
+            {/* <Header/> */}
             <div className={styles.subHeader}>
                 <div className={styles.subHeaderText}>
                     Shopping Cart 

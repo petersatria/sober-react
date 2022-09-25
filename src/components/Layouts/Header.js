@@ -35,7 +35,7 @@ const Header = () => {
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <NavLink to="home" className={navStyle}>
+                        <NavLink to="main/home" className={navStyle}>
                             Home
                         </NavLink>
                     </li>
@@ -89,7 +89,7 @@ const Header = () => {
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink
+                        <NavLink to="/cart"
                             className={`${styles['sub-link']} ${styles['sub-link--cart']}`}
                         >
                             <FontAwesomeIcon icon={faCartShopping} />
