@@ -16,14 +16,15 @@ import './style.css'
 const ProductDetail = (props) => {
 	const [items, setItems] = useState(1);
 	const [product, setProduct] = useState('')
+	const [productPrice, setProductPrice] = useState(0)
 	const [productImg, setProductImg] = useState([])
 	const [productsRelated, setProductsRelated] = useState([{
 		"name": '',
-		"price": null,
+		"price": 0,
 		"images": []
 	}])
 
-	console.log(product,'test')
+	// console.log(product, 'test')
 
 	const [isLoading, setIsLoading] = useState(true)
 	const { id } = useParams()
@@ -44,20 +45,24 @@ const ProductDetail = (props) => {
 		}
 	}
 
-	const addToCartHandler = () => {
-		console.log("add to cart", items)
+	const addToCartHandler = async () => {
+		// console.log("add to cart", items)
 
-		//axios.post
-		// props.onAddItems(items)
-		// setItems(1)
-		// window.location.assign('/cart')
+		const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
+
+		console.log(post)
+
+		window.location.assign('/cart')
 	}
 
 	const getProduct = async () => {
 		try {
 			const { data } = await axios.get(`http://localhost:5000/api/product/${id}`)
+
+			// console.log("from getProduct", data.product.images)
 			setProduct(data.product)
-			setProductImg(data.data.images)
+			setProductPrice(data.product.price)
+			setProductImg(data.product.images)
 
 		} catch (error) {
 			console.log(error)
@@ -67,9 +72,9 @@ const ProductDetail = (props) => {
 
 	const getProducts = async () => {
 		try {
-			const { data } = await axios.get('http://localhost:5000/api/products')
+			const { data } = await axios.get('http://localhost:5000/api/product')
 
-			setProductsRelated(data.data)
+			setProductsRelated(data.result)
 			setIsLoading(false)
 
 		} catch (error) {
@@ -77,6 +82,7 @@ const ProductDetail = (props) => {
 			// window.location.assign('/not-found-page')
 		}
 	}
+
 	function Arrow(props) {
 		const { className, style, onClick } = props;
 		return (
@@ -137,6 +143,10 @@ const ProductDetail = (props) => {
 
 	const shuffled = [...productsRelated].sort(() => 0.5 - Math.random());
 
+	const price = productPrice.toLocaleString('id-ID', {
+		style: 'currency',
+		currency: 'IDR',
+	});
 
 	return (
 		<div className="container">
@@ -156,7 +166,7 @@ const ProductDetail = (props) => {
 					<p className={`mt-5 mt-md-3 mt-lg-5 ${styles.descProduct}`}>
 						{product.detail}
 					</p>
-					<p className={` mt-5 mt-md-3 mt-lg-5 ${styles.priceProduct}`}>Rp{product.price}</p>
+					<p className={` mt-5 mt-md-3 mt-lg-5 ${styles.priceProduct}`}>{price}</p>
 					<div className="row justify-content-center">
 						<div className="col-4 mt-5 mt-md-3 mt-lg-5">
 							<input className={`${styles.fullWidth} ${styles.inputNum}`} type="number" name="quantity" id="quantity" min={1} max={10} onChange={itemsHandler} value={items} />
@@ -166,7 +176,7 @@ const ProductDetail = (props) => {
 						</div>
 					</div>
 					<div className={`mt-5 mt-md-3 mt-lg-5 align-items-end ${styles.border}`}>
-						<p className={`my-5 my-md-3 my-lg-5 ${styles.catProduct}`}>CATEGORY: {product.thumbnail}</p>
+						<p className={`my-5 my-md-3 my-lg-5 ${styles.catProduct}`}>CATEGORY: {"ANY CATEGORY"}</p>
 					</div>
 				</div>
 			</div>

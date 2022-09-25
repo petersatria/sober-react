@@ -3,6 +3,12 @@ import styles from './product.module.css'
 
 const Product = ({ product, isLoading }) => {
 
+
+	const price = product.price.toLocaleString('id-ID', {
+		style: 'currency',
+		currency: 'IDR',
+	});
+
 	return (
 		<>
 			{!isLoading &&
@@ -18,8 +24,8 @@ const Product = ({ product, isLoading }) => {
 							</div>
 						</a>
 						<div className={`card-body ${styles.productDesc}`} >
-							<p>{product.name}</p>
-							<p>Rp{product.price}</p>
+							<p className={` ${styles.listProductFont}`}>{product.name}</p>
+							<p className={` ${styles.listProductFont}`}>{price}</p>
 						</div>
 					</div>
 				</div>
