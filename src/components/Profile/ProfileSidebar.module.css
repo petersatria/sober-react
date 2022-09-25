@@ -16,15 +16,11 @@
     font-weight: 500;
     font-size: 14px;
     font-size: 1.4rem;
-    color: #909097;
 }
 .list a:hover{
     color: red;
 }
 
-.list a.active{
-    color:black;
-}
 
 @media only screen and (max-width: 1199px) {
     .list{
