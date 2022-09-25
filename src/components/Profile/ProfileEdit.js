@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Button from 'react-bootstrap/Button';
+// import { Button } from 'react-bootstrap/Button';
 import style from './ProfileEdit.module.css'
-import Form from 'react-bootstrap/Form';
+// import { Form } from 'react-bootstrap/Form';
 
 
 function ProfileEdit() {
@@ -23,7 +23,7 @@ function ProfileEdit() {
             <br/>
           <div className='row'>
             <div className='col-6'>
-              <Form className={style.formEdit}>
+              {/* <Form className={style.formEdit}>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                   <Form.Label>New Password</Form.Label>
                   <Form.Control type="password" placeholder="New Password" />
@@ -35,7 +35,7 @@ function ProfileEdit() {
                   <Button className='mt-3' variant="dark" type="submit">
                     Submit
                   </Button>
-                </Form>
+                </Form> */}
             </div>
           </div>
           </div>
