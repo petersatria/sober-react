@@ -5,7 +5,6 @@ import {
   Navigate
 } from "react-router-dom";
 import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage } from './pages/index'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ProfileEdit, ProfileDetail } from './components/Profile'
 import Dashboard from './components/Dashboard/Dashboard';
 import FormDashboard from './components/Dashboard/FormDashboard';

@@ -23,6 +23,7 @@ const OrderList = () => {
 	const getOrders = async () => {
 		try {
 			const { data } = await axios.get(`http://localhost:5000/transactionHistoryDetail/${userId}`)
+			console.log(data)
 
 			// console.log('from list', data.result)
 			setZero(false)
@@ -37,6 +38,8 @@ const OrderList = () => {
 	useEffect(() => {
 		getOrders()
 	}, [])
+
+	console.log(orders)
 
 	return (
 		<div className="container">
