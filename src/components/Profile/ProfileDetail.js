@@ -11,14 +11,14 @@ function ProfileDetail() {
   const [birthdate, setBirtdate] = useState('');  
   
  const {id}= useParams()
-
+console.log(id)
   useEffect(() => {
-   Getdata()
+   Getdata(id)
   },[])
 
-  const Getdata = async (id) => {
+  const Getdata = async (idUser) => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/datauser/' + id);
+      const { data } = await axios.get('http://localhost:5000/api/datauser/' + idUser);
       setName(data.result.name);
       setUsername(data.result.username);
       setEmail(data.result.email);
