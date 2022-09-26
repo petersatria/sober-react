@@ -33,6 +33,8 @@ const ProductDetail = (props) => {
 
 	}, [refresh])
 
+	const clickRefresh = () => setRefresh(prev => prev + 1)
+
 	const itemsHandler = e => {
 		if (e.target.value > 10) {
 			setItems(10)
@@ -56,7 +58,6 @@ const ProductDetail = (props) => {
 			setProduct(data.product)
 			setProductPrice(data.product.price)
 			setProductImg(data.product.images)
-			setRefresh(prev => prev + 1)
 
 		} catch (error) {
 			console.log(error)
@@ -179,7 +180,7 @@ const ProductDetail = (props) => {
 						<Slider {...settingsRelated}>
 							{productsRelated && productsRelated.slice(0, 4).map(product => (
 								<div key={Math.random().toString() + product._id} className="mt-5 p-3">
-									<Product product={product} isLoading={isLoading} />
+									<Product product={product} isLoading={isLoading} refresh={clickRefresh} />
 								</div>
 							))}
 						</Slider>

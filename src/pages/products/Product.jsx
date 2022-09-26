@@ -1,8 +1,15 @@
 import styles from './product.module.css'
 import { Link } from 'react-router-dom'
 
-const Product = ({ product, isLoading }) => {
+const Product = (props) => {
+	const { product, isLoading } = props
 
+	console.log(props.refresh)
+
+	const clickHandler = () => {
+		props.refresh()
+		window.scrollTo(0, 0)
+	}
 
 	const price = product.price.toLocaleString('id-ID', {
 		style: 'currency',
@@ -14,7 +21,7 @@ const Product = ({ product, isLoading }) => {
 			{!isLoading &&
 				<div className="col mb-5">
 					<div className={`card h-100 border-0 ${styles.wrapperProduct}`}>
-						<Link to={`/products/${product._id}`} onClick={() => { window.scrollTo(0, 0); }}>
+						<Link to={`/products/${product._id}`} onClick={clickHandler}>
 							<div className={`card-img-top`}>
 								<div>
 									<img className={` ${styles.productImg}`} src={product.images[0]} alt="" />
