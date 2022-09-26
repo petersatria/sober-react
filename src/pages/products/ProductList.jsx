@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import Product from "./Product"
 import BreadCumb from "../../components/BreadCumb";
 import axios from "axios";
-import './style.css'
 
 const ProductList = (props) => {
 	const [products, setProducts] = useState([{

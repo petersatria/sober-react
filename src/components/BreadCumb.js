@@ -1,13 +1,14 @@
-import '../pages/products/style.css'
+import '../style.css'
+import { Link } from 'react-router-dom'
 
 const BreadCumb = ({ linkTo }) => {
 
 	return (
 		<div className="wrapper-header">
 			<div className="breadcumb-header">
-				<a href="/">Home</a>
+				<Link to="/">Home</Link>
 				<p className="bi bi-chevron-right"></p>
-				{linkTo.name && <><a href="/products/">Product List</a><p className="bi bi-chevron-right"></p></>}
+				{linkTo.name && <><Link to="/products/">Product List</Link><p className="bi bi-chevron-right"></p></>}
 				<p className="breadcumb-p">{linkTo.name || linkTo}</p>
 			</div>
 		</div>

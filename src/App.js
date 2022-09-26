@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage, Login } from "./pages/index";
+import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage, Login, PageUnderConst, PageNotFound } from "./pages/index";
 import { ProfileEdit, ProfileDetail } from "./components/Profile";
 import Dashboard from "./components/Dashboard/Dashboard";
 import FormAdd from './components/Dashboard/FormAdd';
@@ -31,11 +31,11 @@ function App() {
         <Route path="/main/*" element={<Mainpage />}>
           <Route path="home" element={<Homepage />} />
           <Route path="products" element={<ProductList />} />
-          <Route path="features" element={<h1>features</h1>} />
-          <Route path="pages" element={<h1>pages</h1>} />
-          <Route path="blog" element={<h1>blog</h1>} />
+          <Route path="features" element={<PageUnderConst />} />
+          <Route path="pages" element={<PageUnderConst />} />
+          <Route path="blog" element={<PageUnderConst />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
-
         <Route path="login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="profile/:id" element={<ProfilePage />}>
@@ -45,13 +45,13 @@ function App() {
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormDashboard />} />
           <Route path="add-product" element={<FormAdd />} />
-
         </Route>
         <Route path="/test" element={<Test />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/order-list/:userId/" element={<OrderList />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/products" element={[<ProductList />, <Mainpage />]} />
+        <Route path="/products/:id" element={[<ProductDetail />, <Mainpage />]} />
+        <Route path="/order-list/:userId/" element={[<OrderList />, <Mainpage />]} />
+        <Route path="/cart" element={[<Cart />, <Mainpage />]} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

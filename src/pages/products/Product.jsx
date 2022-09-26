@@ -1,5 +1,5 @@
-import './style.css'
 import styles from './product.module.css'
+import { Link } from 'react-router-dom'
 
 const Product = ({ product, isLoading }) => {
 
@@ -14,7 +14,7 @@ const Product = ({ product, isLoading }) => {
 			{!isLoading &&
 				<div className="col mb-5">
 					<div className={`card h-100 border-0 ${styles.wrapperProduct}`}>
-						<a href={`/products/${product._id}`}>
+						<Link to={`/products/${product._id}`} onClick={() => { window.scrollTo(0, 0); }}>
 							<div className={`card-img-top`}>
 								<div>
 									<img className={` ${styles.productImg}`} src={product.images[0]} alt="" />
@@ -22,7 +22,7 @@ const Product = ({ product, isLoading }) => {
 								</div>
 
 							</div>
-						</a>
+						</Link>
 						<div className={`card-body ${styles.productDesc}`} >
 							<p className={` ${styles.listProductFont}`}>{product.name}</p>
 							<p className={` ${styles.listProductFont}`}>{price}</p>

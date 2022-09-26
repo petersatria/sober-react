@@ -64,19 +64,19 @@ const Header = () => {
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="features" className={navStyle}>
+                        <NavLink to="main/features" className={navStyle}>
                             Features
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="pages" className={navStyle}>
+                        <NavLink to="main/pages" className={navStyle}>
                             Pages
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="blog" className={navStyle}>
+                        <NavLink to="main/blog" className={navStyle}>
                             Blog
                         </NavLink>
                     </li>
