@@ -44,13 +44,13 @@ export default function Cart(){
             {/* <Test/> */}
             {/* <Header/> */}
             <div className={styles.subHeader}>
-                <div className={styles.subHeaderText} style={{fontSize:'1.4rem', marginLeft:'9vw'}}>
+                <div className={styles.subHeaderText}>
                     Shopping Cart 
                     <div className={styles.cartNumber}>{carts.length}</div>
                 </div>
             </div>
-                <div className={`${styles.cartContent} mt-5`} style={{fontSize:'1.4rem'}}>
-                    <table className={`${styles.tableCart} w-50`}>
+                <div className={`${styles.cartContent} mt-5`}>
+                    <table className={`${styles.tableCart}`}>
                         <thead>
                             <tr>
                                 <th>Product</th>
@@ -64,7 +64,7 @@ export default function Cart(){
                             carts.sort((a,b) => (a.timestamp > b.timestamp) ? 1 : ((b.timestamp > a.timestamp) ? -1 : 0)).map((val,index)=>{
                                 return(
                                     <tr key={index}>
-                                        <td><img src={`${val.product[0].thumbnail}`} width={100}/><span className='m-2'>{val.product[0].name}</span></td>
+                                        <td><img src={`${val.product[0].thumbnail}`} className={styles.imageTable} width={100}/><span className='m-2'>{val.product[0].name}</span></td>
                                         <td>$ {val.product[0].price}</td>
                                         <td className={styles.qtyBox}>
                                             <span style={{color:'silver'}}>QTY:</span>
@@ -83,14 +83,14 @@ export default function Cart(){
                         </tbody>
                     </table>
 
-                    <div className={`${styles.couponContainer} w-50 mt-5`}>
+                    <div className={`${styles.couponContainer} mt-5`}>
                         <div>Coupon</div>
                         <input placeholder='Coupon code' className={styles.inputCoupon}/>
                         <button className={styles.buttonCoupon}>APPLY COUPON</button>
                     </div>
 
 
-                    <div className={`${styles.checkoutContainer} w-50 mt-5`}>
+                    <div className={`${styles.checkoutContainer} mt-5`}>
                         <div>Cart Total</div>
                         <div className={`${styles.checkoutContent}`} >
                             <div className={`${styles.subTotalCheckout}`}>

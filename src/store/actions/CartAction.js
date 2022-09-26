@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { getCookie } from '../../moduleComponents/cookie'
 const url = `http://localhost:5000/`
+var userId = JSON.parse(getCookie('userCookie')).id
 
-
-export const getCart=(userId='62dd766bcf569a60ceded351')=>{
+export const getCart=()=>{
     return async (dispatch)=>{
         try {
             const {data} = await axios.get(`${url}cart/${userId}`)
@@ -18,7 +19,7 @@ export const getCart=(userId='62dd766bcf569a60ceded351')=>{
 }
 
 
-export const addCart=(data, userId='62dd766bcf569a60ceded351')=>{
+export const addCart=(data)=>{
     return async (dispatch, state)=>{
         try {
             const { carts } = state().cart
@@ -88,7 +89,7 @@ export const deleteProduct=(productId, cartId)=>{
 }
 
 
-export const checkoutCart=({total_order,carts},userId='62dd766bcf569a60ceded351', navigate)=>{
+export const checkoutCart=({total_order,carts},id,navigate)=>{
     return async(dispatch,state)=>{
         let dataPost = {
             total_order,
