@@ -1,98 +1,88 @@
-import { useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import useFetch from '../../hooks/use-fetch';
-
-import Form from '../GeneralUI/Form';
-import Input from '../GeneralUI/Input';
+import { useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Overlay from '../GeneralUI/Overlay';
 import HeaderV2 from '../Layouts/HeaderV2';
 
 import styles from './FormDashboard.module.css';
 
-const FormDashboard = () => {
-    // Params
-    const params = useParams();
+const FormDashboard = (props) => {
+    // States
+    const [imgNum, setImgNum] = useState(1);
 
-    // Fetch hook
-    const { sendRequest, pending, result, status } = useFetch();
+    // Refs
+    const formRef = useRef();
 
-    // Ref
-    const idInputRef = useRef();
-    const nameInputRef = useRef();
-    const thumbnailInputRef = useRef();
-    const recommendationInputRef = useRef();
-    const priceInputRef = useRef();
-    const imagesInputRef = useRef();
+    // Side effect
+    const { formEl } = props;
+    useEffect(() => {
+        formEl(formRef.current);
+    }, [formEl]);
+
+    const imgLinkInput = [];
+    for (let i = 0; i < imgNum; i++) {
+        imgLinkInput.push(
+            <div key={i} className={styles.fgroup}>
+                <input className={styles.input} type="text" name={`image-${i}`} />
+                <label className={styles.label}>Image link</label>
+            </div>
+        );
+    }
 
     // Handler
-    const submitFormHandler = (e) => {
-        e.preventDefault();
-
-        const productUpdateInput = {
-            id: idInputRef?.current?.value || null,
-            name: nameInputRef?.current?.value || null,
-            thumbnail: thumbnailInputRef?.current?.value || null,
-            recommendation: recommendationInputRef?.current?.value || null,
-            price: priceInputRef?.current?.value || null,
-            images: imagesInputRef?.current?.value || null,
-        };
-
-        sendRequest({
-            method: 'PATCH',
-            url: `http://localhost:5000/api/edit-data/${params.productId}`,
-            data: productUpdateInput,
-        });
-
-        idInputRef.current.reset();
-        nameInputRef.current.reset();
-        thumbnailInputRef.current.reset();
-        priceInputRef.current.reset();
-        imagesInputRef.current.reset();
+    const addImgInputHandler = () => {
+        setImgNum((prevState) => prevState + 1);
     };
-
-    const notifResultMessage =
-        result === 'error'
-            ? 'Something went wrong, Please try again later'
-            : 'Register successful';
-
-    const notifMessage = pending ? 'Registering your account...' : notifResultMessage;
-
-    const notif = (
-        <div className={styles.notif}>
-            <p className={styles['notif-status']}>{status}</p>
-            <p className={styles['notif-message']}>{notifMessage}</p>
-        </div>
-    );
 
     return (
         <Overlay>
-            <HeaderV2 heading="Update Products" path="/admin" />
             <div className={styles.container}>
-                {status !== '' && notif}
+                <HeaderV2 heading={props.heading} path="/admin" />
 
-                <Form onSubmit={submitFormHandler}>
-                    <div className={styles['form-group']}>
-                        <Input ref={idInputRef} type="text" label="ID" />
-
-                        <Input ref={nameInputRef} type="text" label="Name" />
-
-                        <Input ref={thumbnailInputRef} type="text" label="Thumbnail" />
-
-                        {/* <Input
-                            ref={recommendationInputRef}
-                            type="text"
-                            label="Recommendation"
-                        /> */}
-
-                        {/* <Input ref={priceInputRef} type="text" label="Price" /> */}
-
-                        {/* <Input ref={imagesInputRef} type="text" label="Image link" /> */}
+                <form ref={formRef} onSubmit={props.onSubmit} className={styles.form}>
+                    <div className={styles.fgroup}>
+                        <input className={styles.input} type="text" name="name" />
+                        <label className={styles.label}>Product name</label>
                     </div>
 
-                    <div className={styles['form-group']}>
-                        <button className={styles['btn-signup']}>Update</button>
+                    <div className={styles.fgroup}>
+                        <textarea
+                            className={`${styles.input} ${styles.tarea}`}
+                            name="detail"
+                        />
+                        <label className={styles.label}>Product detail</label>
                     </div>
-                </Form>
+
+                    <div className={styles.fgroup}>
+                        <input className={styles.input} type="text" name="thumbnail" />
+                        <label className={styles.label}>Thumbnail</label>
+                    </div>
+
+                    <div className={styles.fgroup}>
+                        <input className={styles.input} type="number" name="price" />
+                        <label className={styles.label}>Price</label>
+                    </div>
+
+                    <div className={styles.fgroup}>
+                        <input className={styles.input} type="number" name="stock" />
+                        <label className={styles.label}>Stock</label>
+                    </div>
+
+                    {imgLinkInput}
+
+                    <div className={styles.fgroup}>
+                        <button
+                            type="button"
+                            onClick={addImgInputHandler}
+                            className={styles.btn}
+                        >
+                            Add image link
+                        </button>
+                    </div>
+
+                    <div className={styles.fgroup}>
+                        <button className={styles.btn}>{props.heading}</button>
+                    </div>
+                </form>
             </div>
         </Overlay>
     );

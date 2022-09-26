@@ -1,4 +1,3 @@
-import HeaderV2 from '../Layouts/HeaderV2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,6 +24,15 @@ const Dashboard = () => {
         sendRequest(reqConfig, dataHandler);
     }, [sendRequest]);
 
+    const deleteHandler = function () {
+        sendRequest({
+            url: `http://localhost:5000/api/delete-product/${this}`,
+            method: 'DELETE',
+        });
+
+        window.location.href = `${window.location.protocol}//${window.location.host}/admin`;
+    };
+
     const rowsData = data.map((data) => (
         <Fragment key={data._id}>
             <p className={styles.col}>{data._id}</p>
@@ -34,8 +42,6 @@ const Dashboard = () => {
             <p className={styles.col}>{data.detail}</p>
 
             <p className={styles.col}>{data.thumbnail}</p>
-
-            <p className={styles.col}>{data.recommendation ? 'Yes' : 'No'}</p>
 
             <p className={styles.col}>
                 {data.price?.toLocaleString('id-ID', {
@@ -50,7 +56,10 @@ const Dashboard = () => {
                 <FontAwesomeIcon icon={faPencil} />
             </Link>
 
-            <button className={`${styles.col} ${styles.btn}`}>
+            <button
+                onClick={deleteHandler.bind(data._id)}
+                className={`${styles.col} ${styles.btn}`}
+            >
                 <FontAwesomeIcon icon={faTrash} />
             </button>
         </Fragment>
@@ -58,14 +67,15 @@ const Dashboard = () => {
 
     return (
         <section className={styles.container}>
-            <HeaderV2 heading="Admin Dashboard" path="/" />
+            <Link to="add-product" className={styles.add}>
+                Add Product+
+            </Link>
 
             <div className={styles.table}>
                 <p className={styles.head}>Id</p>
                 <p className={styles.head}>Name</p>
                 <p className={styles.head}>Detail</p>
                 <p className={styles.head}>Thumbnail</p>
-                <p className={styles.head}>Recomendation</p>
                 <p className={styles.head}>Price</p>
                 <p className={styles.head}>Images</p>
                 <p className={`${styles.head} ${styles.headless}`}></p>
