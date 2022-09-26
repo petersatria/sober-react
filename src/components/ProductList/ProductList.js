@@ -18,8 +18,7 @@ const ProductList = (props) => {
         setCartActive((prevState) => true);
         const dataCart = {
             productId:product._id,
-            quantity:1,
-            cartId:`632cb38f55b627d11bc08d8f`
+            quantity:1
         }
 
         dispatch(addCart(dataCart))

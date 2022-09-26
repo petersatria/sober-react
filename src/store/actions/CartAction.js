@@ -30,15 +30,17 @@ export const addCart=(data)=>{
         userId = token.id
     }
 
+    
+    
     return async (dispatch, state)=>{
         try {
             const { carts } = state().cart
             const findProductInCart = carts.filter((val)=>val.productId==data.productId)
-            
+            const quantity = data.quantity?+data.quantity:1
             if(findProductInCart.length>0){
-                const newQuantity = {...findProductInCart[0], quantity:findProductInCart[0].quantity+1}
+                const newQuantity = {...findProductInCart[0], quantity:findProductInCart[0].quantity+quantity}
                 const filterData = carts.filter((val)=>val.productId!==data.productId).concat(newQuantity)
-                await axios.patch(`${url}cart`, {cartId:data.cartId, productId:data.productId, quantity:findProductInCart[0].quantity+1})
+                await axios.patch(`${url}cart`, {cartId:findProductInCart[0].cartId, productId:data.productId, quantity:findProductInCart[0].quantity+quantity})
                 dispatch({
                     type:'CHANGE_QUANTITY',
                     payload:filterData
