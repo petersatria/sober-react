@@ -5,11 +5,17 @@ import styles from './Header.module.css';
 import brandLogo from '../../assets/logo-light.svg';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { logoutUser } from '../../store/actions/LoginAction'
+import { eraseCookie, getCookie } from '../../moduleComponents/cookie'
 
 const Header = () => {
     const [headerTransparant, setHeaderTransparant] = useState(true);
-    const {carts} = useSelector(state=>state.cart)
+    const { carts } = useSelector(state=>state.cart)
+    const { isLoggedIn, username } = useSelector(state=>state.user)
+    const dispatch = useDispatch()
+    const cookie = JSON.parse(getCookie('userCookie'))
+
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -25,6 +31,11 @@ const Header = () => {
     // Class
     const navStyle = (navItem) =>
         navItem.isActive ? `${styles.link} ${styles.active}` : `${styles.link}`;
+
+    const onLogoutClick=()=>{
+        dispatch(logoutUser())
+        eraseCookie('userCookie')
+    }
 
     return (
         <header
@@ -79,16 +90,30 @@ const Header = () => {
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </NavLink>
                     </li>
+                    {
+                        isLoggedIn?
+                        <>
+                            <li className={styles.item}>
+                            <NavLink to={`/profile/${cookie.id}`} className={styles['sub-link']}>{username}</NavLink>
 
-                    <li className={styles.item}>
-                        <NavLink className={styles['sub-link']}>Login</NavLink>
-                    </li>
+                            </li>
+                            <li className={styles.item} onClick={onLogoutClick}>
+                                Logout
+                            </li>
+                        </>
+                        :
+                        <>
+                            <li className={styles.item}>
+                                <NavLink to="/login" className={styles['sub-link']}>Login</NavLink>
+                            </li>
 
-                    <li className={styles.item}>
-                        <NavLink to="/signup" className={styles['sub-link']}>
-                            Register
-                        </NavLink>
-                    </li>
+                            <li className={styles.item}>
+                                <NavLink to="/signup" className={styles['sub-link']}>
+                                    Register
+                                </NavLink>
+                            </li>
+                        </>
+                    }
 
                     <li className={styles.item}>
                         <NavLink to="/cart"
