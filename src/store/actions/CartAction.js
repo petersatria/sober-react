@@ -1,9 +1,13 @@
 import axios from 'axios'
 import { getCookie } from '../../moduleComponents/cookie'
 const url = `http://localhost:5000/`
-var userId = JSON.parse(getCookie('userCookie')).id
 
 export const getCart=()=>{
+    const token = JSON.parse(getCookie('userCookie'))
+    let userId = '0'
+    if(token){
+        userId = token.id
+    }
     return async (dispatch)=>{
         try {
             const {data} = await axios.get(`${url}cart/${userId}`)
@@ -20,6 +24,12 @@ export const getCart=()=>{
 
 
 export const addCart=(data)=>{
+    const token = JSON.parse(getCookie('userCookie'))
+    let userId = '0'
+    if(token){
+        userId = token.id
+    }
+
     return async (dispatch, state)=>{
         try {
             const { carts } = state().cart
@@ -51,6 +61,11 @@ export const addCart=(data)=>{
 
 
 export const changeQty=(qty,productId)=>{
+    const token = JSON.parse(getCookie('userCookie'))
+    let userId = '0'
+    if(token){
+        userId = token.id
+    }
     return async(dispatch,state)=>{
         try {
             const { carts } = state().cart
@@ -75,6 +90,11 @@ export const changeQty=(qty,productId)=>{
 
 
 export const deleteProduct=(productId, cartId)=>{
+    const token = JSON.parse(getCookie('userCookie'))
+    let userId = '0'
+    if(token){
+        userId = token.id
+    }
     return async(dispatch, state)=>{
         const { carts } = state().cart
         const newCarts = carts.filter((val)=>val.productId!==productId)
@@ -90,6 +110,11 @@ export const deleteProduct=(productId, cartId)=>{
 
 
 export const checkoutCart=({total_order,carts},id,navigate)=>{
+    const token = JSON.parse(getCookie('userCookie'))
+    let userId = '0'
+    if(token){
+        userId = token.id
+    }
     return async(dispatch,state)=>{
         let dataPost = {
             total_order,
