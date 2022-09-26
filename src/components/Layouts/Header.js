@@ -11,8 +11,8 @@ import { eraseCookie, getCookie } from '../../moduleComponents/cookie'
 
 const Header = () => {
     const [headerTransparant, setHeaderTransparant] = useState(true);
-    const { carts } = useSelector(state=>state.cart)
-    const { isLoggedIn, username } = useSelector(state=>state.user)
+    const { carts } = useSelector(state => state.cart)
+    const { isLoggedIn, username } = useSelector(state => state.user)
     const dispatch = useDispatch()
     const cookie = JSON.parse(getCookie('userCookie'))
 
@@ -32,9 +32,13 @@ const Header = () => {
     const navStyle = (navItem) =>
         navItem.isActive ? `${styles.link} ${styles.active}` : `${styles.link}`;
 
-    const onLogoutClick=()=>{
+    const onLogoutClick = () => {
         dispatch(logoutUser())
         eraseCookie('userCookie')
+    }
+
+    const scrollUpPage = () => {
+        window.scrollTo(0, 0);
     }
 
     return (
@@ -54,7 +58,7 @@ const Header = () => {
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="shop" className={navStyle}>
+                        <NavLink to="products" className={navStyle}>
                             Shop
                         </NavLink>
                     </li>
@@ -80,7 +84,7 @@ const Header = () => {
             </nav>
 
             <div>
-                <img src={brandLogo} alt="Brand Logo" />
+                <NavLink to="main/home"> <img src={brandLogo} onClick={scrollUpPage} alt="Brand Logo" /> </NavLink>
             </div>
 
             <nav className={styles.nav}>
@@ -91,28 +95,28 @@ const Header = () => {
                         </NavLink>
                     </li>
                     {
-                        isLoggedIn?
-                        <>
-                            <li className={styles.item}>
-                            <NavLink to={`/profile/${cookie.id}`} className={styles['sub-link']}>{username}</NavLink>
+                        isLoggedIn ?
+                            <>
+                                <li className={styles.item}>
+                                    <NavLink to={`/profile/${cookie.id}`} className={styles['sub-link']}>{username}</NavLink>
 
-                            </li>
-                            <li className={styles.item} onClick={onLogoutClick}>
-                                Logout
-                            </li>
-                        </>
-                        :
-                        <>
-                            <li className={styles.item}>
-                                <NavLink to="/login" className={styles['sub-link']}>Login</NavLink>
-                            </li>
+                                </li>
+                                <li className={styles.item} onClick={onLogoutClick}>
+                                    Logout
+                                </li>
+                            </>
+                            :
+                            <>
+                                <li className={styles.item}>
+                                    <NavLink to="/login" className={styles['sub-link']}>Login</NavLink>
+                                </li>
 
-                            <li className={styles.item}>
-                                <NavLink to="/signup" className={styles['sub-link']}>
-                                    Register
-                                </NavLink>
-                            </li>
-                        </>
+                                <li className={styles.item}>
+                                    <NavLink to="/signup" className={styles['sub-link']}>
+                                        Register
+                                    </NavLink>
+                                </li>
+                            </>
                     }
 
                     <li className={styles.item}>

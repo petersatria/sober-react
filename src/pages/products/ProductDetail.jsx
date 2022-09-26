@@ -51,7 +51,7 @@ const ProductDetail = (props) => {
 	const addToCartHandler = async () => {
 		// console.log("add to cart", items)
 
-		// const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
+		// await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
 
 		dispatch(addCart({ productId: id, quantity: items }))
 		window.location.assign('/cart')

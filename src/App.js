@@ -17,7 +17,7 @@ function App() {
   console.log(userId)
 
   useEffect(() => {
-    if(userId){
+    if (userId) {
       dispatch(getCart());
     }
     dispatch(checkLogin());
@@ -30,7 +30,7 @@ function App() {
         <Route path="/" element={<Navigate to="/main/home" />} />
         <Route path="/main/*" element={<Mainpage />}>
           <Route path="home" element={<Homepage />} />
-          <Route path="shop" element={<h1>shop</h1>} />
+          <Route path="products" element={<ProductList />} />
           <Route path="features" element={<h1>features</h1>} />
           <Route path="pages" element={<h1>pages</h1>} />
           <Route path="blog" element={<h1>blog</h1>} />
