@@ -1,17 +1,22 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
-import useFetch from '../../hooks/use-fetch';
 import Overlay from '../GeneralUI/Overlay';
 import HeaderV2 from '../Layouts/HeaderV2';
 
 import styles from './FormDashboard.module.css';
 
-const FormAdd = () => {
+const FormDashboard = (props) => {
     // States
     const [imgNum, setImgNum] = useState(1);
 
     // Refs
     const formRef = useRef();
+
+    // Side effect
+    const { formEl } = props;
+    useEffect(() => {
+        formEl(formRef.current);
+    }, [formEl]);
 
     const imgLinkInput = [];
     for (let i = 0; i < imgNum; i++) {
@@ -23,53 +28,17 @@ const FormAdd = () => {
         );
     }
 
-    // Fetch
-    const { sendRequest } = useFetch();
-
     // Handler
     const addImgInputHandler = () => {
         setImgNum((prevState) => prevState + 1);
     };
 
-    const submitHandler = async (e) => {
-        e.preventDefault();
-
-        // Get form data
-        const formData = Object.fromEntries(new FormData(formRef.current).entries());
-        const formEntries = Object.entries(formData);
-
-        // Extract images link to one single array
-        const images = formEntries
-            .filter((data) => data[0].startsWith('image'))
-            .map((img) => img[1]);
-
-        // Delete form data field start with image e.g 'image-1' and convert price data type to number
-        formEntries.forEach((data) => {
-            if (data[0].startsWith('image')) delete formData[data[0]];
-            if (data[0] === 'price' || data[0] === 'stock') formData[data[0]] = +data[1];
-        });
-
-        // Insert images field
-        formData.images = images;
-
-        await sendRequest({
-            url: 'http://localhost:5000/api/create-product',
-            method: 'POST',
-            data: formData,
-        });
-    };
-
     return (
         <Overlay>
             <div className={styles.container}>
-                <HeaderV2 heading="Add product" path="/admin" />
+                <HeaderV2 heading={props.heading} path="/admin" />
 
-                <form ref={formRef} onSubmit={submitHandler} className={styles.form}>
-                    <div className={styles.fgroup}>
-                        <input className={styles.input} type="text" name="id" />
-                        <label className={styles.label}>ID</label>
-                    </div>
-
+                <form ref={formRef} onSubmit={props.onSubmit} className={styles.form}>
                     <div className={styles.fgroup}>
                         <input className={styles.input} type="text" name="name" />
                         <label className={styles.label}>Product name</label>
@@ -111,7 +80,7 @@ const FormAdd = () => {
                     </div>
 
                     <div className={styles.fgroup}>
-                        <button className={styles.btn}>Add</button>
+                        <button className={styles.btn}>{props.heading}</button>
                     </div>
                 </form>
             </div>
@@ -119,4 +88,4 @@ const FormAdd = () => {
     );
 };
 
-export default FormAdd;
+export default FormDashboard;

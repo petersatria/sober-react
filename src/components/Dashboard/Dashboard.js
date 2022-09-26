@@ -1,4 +1,3 @@
-import HeaderV2 from '../Layouts/HeaderV2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 
