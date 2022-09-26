@@ -19,7 +19,7 @@ const useFetch = (pending = false) => {
         result: '',
     });
 
-    const sendRequest = useCallback(async (reqConfig, dataHandler) => {
+    const sendRequest = useCallback(async (reqConfig, dataHandler = () => {}) => {
         dispatch({ type: 'PENDING' });
 
         try {

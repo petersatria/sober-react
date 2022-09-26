@@ -35,8 +35,6 @@ const Dashboard = () => {
 
             <p className={styles.col}>{data.thumbnail}</p>
 
-            <p className={styles.col}>{data.recommendation ? 'Yes' : 'No'}</p>
-
             <p className={styles.col}>
                 {data.price?.toLocaleString('id-ID', {
                     style: 'currency',
@@ -58,14 +56,15 @@ const Dashboard = () => {
 
     return (
         <section className={styles.container}>
-            <HeaderV2 heading="Admin Dashboard" path="/" />
+            <Link to="add-product" className={styles.add}>
+                Add Product+
+            </Link>
 
             <div className={styles.table}>
                 <p className={styles.head}>Id</p>
                 <p className={styles.head}>Name</p>
                 <p className={styles.head}>Detail</p>
                 <p className={styles.head}>Thumbnail</p>
-                <p className={styles.head}>Recomendation</p>
                 <p className={styles.head}>Price</p>
                 <p className={styles.head}>Images</p>
                 <p className={`${styles.head} ${styles.headless}`}></p>

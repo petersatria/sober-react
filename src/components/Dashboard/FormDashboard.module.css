@@ -1,4 +1,77 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    height: 40rem;
+}
+
+.form {
+    margin-top: 2.4rem;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.fgroup {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.input {
+    width: 100%;
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s;
+}
+
+.input:focus,
+.input:hover {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.input.tarea {
+    border: 1px solid #ddd;
+}
+
+.input.tarea:focus,
+.input.tarea:hover {
+    border: 1px solid black;
+}
+
+.label {
+    font-size: 1.4rem;
+}
+
+.btn {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    border-radius: 100000px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* .container {
     margin-top: 4rem;
     width: 100%;
     padding: 0 4.8rem;
@@ -57,4 +130,4 @@
 .btn-signup:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-}
+} */
