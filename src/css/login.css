@@ -1,0 +1,335 @@
+.general-area {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)), url('../assets/wp3646146-men-fashion-wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 85.5vh;
+}
+
+.img-nav {
+    width: 70px;
+    animation: fadeIn 2s;
+}
+
+.nav-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    animation: fadeIn 2s;
+}
+
+.btnFacebook {
+    width: 220px;
+    height: 45px;
+    border-radius: 6px;
+    background: #3b5998;
+    color: white;
+    border: 0px transparent;
+    text-align: center;
+    margin-left: 120px;
+    display: inline-block;
+}
+
+.btnFacebook:hover {
+    background: #3b5998;
+    opacity: 0.6;
+}
+
+.img-tagline {
+    width: 50%;
+    animation: fadeIn 2s;
+}
+
+.img-tagline-area #text-tagline {
+    font-size: 2rem;
+    font-weight: 450;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 3px 2px black;
+    animation: fadeIn 2s;
+}
+
+.form-area {
+    border-radius: 10px;
+    background-color: rgba(39, 39, 39, 0.678);
+    width: 100%;
+    animation: fadeIn 2s;
+}
+
+.form-label, .register span {
+    color: rgb(192, 196, 199);
+}
+
+#togglePassword {
+    cursor: pointer;
+    padding-top: 15px;
+}
+
+#register, #forgot-password {
+    text-decoration: none;
+    color: rgb(0, 74, 212);
+}
+
+#register:hover, #forgot-password:hover {
+    text-decoration: none;
+    color: rgb(46, 46, 231);
+}
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: black;
+}
+
+#btn-submit {
+    width: 100%;
+    height: 45px;
+    border-radius: 15px;
+}
+
+#google-btn {
+    margin: 0px 120px;
+}
+
+/* ============================================ animation =====================================================*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ====================================== //animation end tag// =====================================================*/
+
+/* ========================================= media queries =====================================================*/
+@media (min-width: 1250px) {
+    .img-nav {
+        width: 70px;
+        animation: fadeIn 2s;
+    }
+
+    .nav-text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        animation: fadeIn 2s;
+    }
+
+    .btnFacebook {
+        width: 220px;
+        height: 45px;
+        border-radius: 6px;
+        background: #3b5998;
+        color: white;
+        border: 0px transparent;
+        text-align: center;
+        margin-left: 120px;
+        display: inline-block;
+    }
+
+    .btnFacebook:hover {
+        background: #3b5998;
+        opacity: 0.6;
+    }
+
+    .img-tagline {
+        width: 50%;
+        animation: fadeIn 2s;
+    }
+
+    .img-tagline-area #text-tagline {
+        font-size: 2rem;
+        font-weight: 450;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-shadow: 3px 2px black;
+        animation: fadeIn 2s;
+    }
+
+    .form-area {
+        border-radius: 10px;
+        background-color: rgba(39, 39, 39, 0.678);
+        width: 100%;
+        animation: fadeIn 2s;
+    }
+
+    .form-label, .register span {
+        color: rgb(192, 196, 199);
+    }
+
+    #togglePassword {
+        cursor: pointer;
+        padding-top: 15px;
+    }
+
+    #register, #forgot-password {
+        text-decoration: none;
+        color: rgb(0, 74, 212);
+    }
+
+    #register:hover, #forgot-password:hover {
+        text-decoration: none;
+        color: rgb(46, 46, 231);
+    }
+
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: black;
+    }
+
+    #btn-submit {
+        width: 100%;
+        height: 45px;
+        border-radius: 15px;
+    }
+
+    #google-btn {
+        margin: 0px 120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .img-tagline-area #text-tagline {
+        font-size: 30px;
+    }
+
+    .btnFacebook {
+        margin-left: 70px;
+    }
+
+    #google-btn {
+        margin: 0px 70px;
+    }
+}
+
+@media (max-width: 990px) {
+    .img-tagline-area #text-tagline {
+        font-size: 16px;
+    }
+
+    .img-tagline {
+        width: 70%;
+    }
+
+    .btnFacebook {
+        margin-left: 70px;
+    }
+
+    #google-btn {
+        margin: 0px 70px;
+    }
+}
+
+@media (max-width: 750px) {
+    .general-area {
+        background-size: 280%;
+        background-position: -110px 0;
+    }
+
+    .img-tagline-area #text-tagline {
+        font-size: 20px;
+    }
+
+    .img-tagline {
+        width: 45%;
+    }
+
+    .btnFacebook {
+        margin-left: 100px;
+    }
+
+    #google-btn {
+        margin: 0px 100px;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .img-tagline-area #text-tagline {
+        font-size: 20px;
+    }
+
+    .img-tagline {
+        width: 45%;
+    }
+
+    .form-area {
+        border-radius: 0px;
+        background-color: rgba(39, 39, 39, 0);
+        width: 4%;
+    }
+
+    .btnFacebook {
+        margin-left: 150px;
+    }
+
+    #google-btn {
+        margin: 0px 150px;
+    }
+}
+
+@media (max-width: 500px) {
+    .general-area {
+        background-size: 260%;
+        background-position: -53px 0;
+    }
+
+    .img-tagline-area #text-tagline {
+        font-size: 20px;
+    }
+
+    .img-tagline {
+        width: 45%;
+    }
+
+    .form-area {
+        border-radius: 0px;
+        background-color: rgba(39, 39, 39, 0);
+        width: 4%;
+    }
+
+    .btnFacebook {
+        margin-left: 85px;
+    }
+
+    #google-btn {
+        margin: 0px 85px;
+    }
+}
+
+@media (max-width: 400px) {
+    .general-area {
+        background-size: 260%;
+        background-position: -53px 0;
+    }
+
+    .img-tagline-area #text-tagline {
+        font-size: 20px;
+    }
+
+    .img-tagline {
+        width: 45%;
+    }
+
+    .form-area {
+        border-radius: 0px;
+        background-color: rgba(39, 39, 39, 0);
+        width: 4%;
+    }
+
+    .btnFacebook {
+        margin-left: 70px;
+    }
+
+    #google-btn {
+        margin: 0px 70px;
+    }
+}
+
+/* ==================================== //media queries end tags// =====================================================*/

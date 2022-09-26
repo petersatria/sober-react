@@ -1,26 +1,19 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
-import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage } from './pages/index'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ProfileEdit, ProfileDetail } from './components/Profile'
-import Dashboard from './components/Dashboard/Dashboard';
-import FormDashboard from './components/Dashboard/FormDashboard';
-import Header from './components/Layouts/Header'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { getCart } from './store/actions/CartAction'
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage, Login } from "./pages/index";
+import { ProfileEdit, ProfileDetail } from "./components/Profile";
+import Dashboard from "./components/Dashboard/Dashboard";
+import FormDashboard from "./components/Dashboard/FormDashboard";
+import Header from "./components/Layouts/Header";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getCart } from "./store/actions/CartAction";
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCart())
-  }, [])
+    dispatch(getCart());
+  }, []);
 
   return (
     <BrowserRouter>
@@ -35,10 +28,11 @@ function App() {
           <Route path="blog" element={<h1>blog</h1>} />
         </Route>
 
+        <Route path="login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="profile/:id" element={<ProfilePage />} >
-          <Route index path={'details'} element={<ProfileDetail />} />
-          <Route path={'settings'} element={<ProfileEdit />} />
+        <Route path="profile/:id" element={<ProfilePage />}>
+          <Route index path={"details"} element={<ProfileDetail />} />
+          <Route path={"settings"} element={<ProfileEdit />} />
         </Route>
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormDashboard />} />
