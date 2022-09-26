@@ -22,6 +22,7 @@ const FormBody = () => {
         username: username,
         password: password,
       });
+      console.log(username)
       let isNotif = await notifications(response);
       if (isNotif) {
         setCookie(`cookie-${username}`, JSON.stringify(response.data.sendData), 1);
