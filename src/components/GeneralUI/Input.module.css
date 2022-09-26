@@ -8,6 +8,7 @@
     border: none;
     border-bottom: 1px solid #ccc;
     transition: border-bottom 0.3s;
+    font-size: 1.4rem;
 }
 
 .input.invalid::placeholder {

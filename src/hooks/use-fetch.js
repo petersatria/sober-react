@@ -32,7 +32,7 @@ const useFetch = (pending = false) => {
             console.error(err);
         }
 
-        setTimeout(() => dispatch({ type: 'RESET' }), 2000);
+        setTimeout(() => dispatch({ type: 'RESET' }), 5000);
     }, []);
 
     return {

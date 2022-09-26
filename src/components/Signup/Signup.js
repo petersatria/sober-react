@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import useFetch from '../../hooks/use-fetch';
+import { useNavigate } from 'react-router-dom';
 
 import Form from '../GeneralUI/Form';
 import Input from '../GeneralUI/Input';
@@ -10,6 +11,9 @@ import styles from './Signup.module.css';
 import hostUrl from '../../url';
 
 const Signup = () => {
+    // Navigate
+    const navigate = useNavigate();
+
     // Fetch hook
     const { sendRequest, pending, result, status } = useFetch();
 
@@ -20,8 +24,17 @@ const Signup = () => {
     const passwordInputRef = useRef();
     const birthdateInputRef = useRef();
 
+    // Side effects
+    useEffect(() => {
+        if (result === 'success') {
+            setTimeout(() => {
+                navigate('/login', { replace: true });
+            }, 3500);
+        }
+    }, [result, navigate]);
+
     // Handler
-    const submitFormHandler = (e) => {
+    const submitFormHandler = async (e) => {
         e.preventDefault();
 
         if (
@@ -59,16 +72,16 @@ const Signup = () => {
     const notifResultMessage =
         result === 'error'
             ? 'Something went wrong, Please try again later'
-            : 'Register successful';
+            : 'Register successful - Redirecting to login';
 
     const notifMessage = pending ? 'Registering your account...' : notifResultMessage;
 
     const notif = (
         <div className={styles.notif}>
-            <p className={styles['notif-status']}>{status}</p>
             <p className={styles['notif-message']}>{notifMessage}</p>
         </div>
     );
+
     return (
         <div className={styles.signup}>
             {status !== '' && notif}
