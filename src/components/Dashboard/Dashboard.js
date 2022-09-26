@@ -24,6 +24,15 @@ const Dashboard = () => {
         sendRequest(reqConfig, dataHandler);
     }, [sendRequest]);
 
+    const deleteHandler = function () {
+        sendRequest({
+            url: `http://localhost:5000/api/delete-product/${this}`,
+            method: 'DELETE',
+        });
+
+        window.location.href = `${window.location.protocol}//${window.location.host}/admin`;
+    };
+
     const rowsData = data.map((data) => (
         <Fragment key={data._id}>
             <p className={styles.col}>{data._id}</p>
@@ -47,7 +56,10 @@ const Dashboard = () => {
                 <FontAwesomeIcon icon={faPencil} />
             </Link>
 
-            <button className={`${styles.col} ${styles.btn}`}>
+            <button
+                onClick={deleteHandler.bind(data._id)}
+                className={`${styles.col} ${styles.btn}`}
+            >
                 <FontAwesomeIcon icon={faTrash} />
             </button>
         </Fragment>

@@ -9,11 +9,9 @@ import {
     SignupPage,
     Mainpage,
 } from './pages/index';
-import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard/Dashboard';
 import FormAdd from './components/Dashboard/FormAdd';
 import FormUpdate from './components/Dashboard/FormUpdate';
-import store from './store/store';
 import Header from './components/Layouts/Header';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';

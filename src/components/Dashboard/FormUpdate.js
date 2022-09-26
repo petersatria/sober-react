@@ -58,13 +58,13 @@ const FormUpdate = () => {
             ...formData,
         };
 
-        console.log(updatedData);
-
         await sendRequest({
             url: `http://localhost:5000/api/edit-data/${params.productId}`,
             method: 'PATCH',
             data: updatedData,
         });
+
+        window.location.href = `${window.location.protocol}//${window.location.host}/admin`;
     };
 
     const formRefHandler = useCallback((formEl) => setFormEl(formEl), []);

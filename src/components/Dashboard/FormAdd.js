@@ -38,6 +38,8 @@ const FormAdd = () => {
             method: 'POST',
             data: formData,
         });
+
+        window.location.href = `${window.location.protocol}//${window.location.host}/admin`;
     };
 
     const formRefHandler = useCallback((formEl) => setFormEl(formEl), []);
