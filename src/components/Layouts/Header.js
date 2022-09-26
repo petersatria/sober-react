@@ -101,8 +101,8 @@ const Header = () => {
                                     <NavLink to={`/profile/${cookie.id}/details`} className={styles['sub-link']}>{username}</NavLink>
 
                                 </li>
-                                <li className={styles.item} onClick={onLogoutClick}>
-                                    Logout
+                                <li className={styles.item} >
+                                    <NavLink className={styles['sub-link']} onClick={onLogoutClick}>Logout </NavLink>
                                 </li>
                             </>
                             :
