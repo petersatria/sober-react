@@ -86,7 +86,7 @@ const FacebookLoginButton = () => {
       cssClass="btnFacebook"
       autoLoad={false}
       callback={responseFacebook}
-      icon={<i className="bi bi-facebook" style={{ marginRight: "7px", fontSize: "18px" }}></i>}
+      icon={<i className="bi bi-facebook" style={{ marginRight: "7px", fontSize: "2rem" }}></i>}
     />
   );
 };
