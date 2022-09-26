@@ -81,7 +81,7 @@ const Header = () => {
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink className={styles['sub-link']}>Login</NavLink>
+                        <NavLink to="/login" className={styles['sub-link']}>Login</NavLink>
                     </li>
 
                     <li className={styles.item}>
