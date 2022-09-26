@@ -16,6 +16,7 @@
     width: inherit;
     height: inherit;
     object-fit: cover;
+    object-position: top;
     position: absolute;
     top: 0;
     left: 0;

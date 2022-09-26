@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage, Login } from "./pages/index";
 import { ProfileEdit, ProfileDetail } from "./components/Profile";
 import Dashboard from "./components/Dashboard/Dashboard";
+import FormAdd from './components/Dashboard/FormAdd';
 import FormDashboard from "./components/Dashboard/FormDashboard";
 import Header from "./components/Layouts/Header";
 import { useEffect } from "react";
@@ -31,11 +32,14 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="profile/:id" element={<ProfilePage />}>
-          <Route index path={"details"} element={<ProfileDetail />} />
-          <Route path={"settings"} element={<ProfileEdit />} />
+          <Route index path="details" element={<ProfileDetail />} />
+          <Route path="settings" element={<ProfileEdit />} />
+          <Route path="order-list" element={<OrderList />} />
         </Route>
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormDashboard />} />
+          <Route path="add-product" element={<FormAdd />} />
+
         </Route>
         <Route path="/test" element={<Test />} />
         <Route path="/products" element={<ProductList />} />
@@ -45,6 +49,7 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
+
 }
 
 export default App;

@@ -8,7 +8,7 @@
     max-width: 140rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, max-content) 30rem repeat(6, min-content);
+    grid-template-columns: repeat(2, max-content) 30rem repeat(5, min-content);
     overflow-x: scroll;
 }
 
@@ -43,4 +43,20 @@
     color: black;
     align-self: start;
     cursor: pointer;
+}
+
+.add {
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 3.2rem;
+    background-color: black;
+    color: white;
+    padding: 1.2rem 2.4rem;
+    transition: all 0.3s;
+}
+
+.add:hover {
+    color: white;
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.249);
 }
