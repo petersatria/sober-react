@@ -54,7 +54,7 @@ const FormBody = () => {
 
   // render
   return (
-    <div className="col-md-7 col-sm-10 col-lg-5 col-xl-5 offset-xl-1 px-md-3 py-md-5 mt form-area">
+    <div className="col-md-7 col-sm-10 col-lg-5 col-xl-5 offset-xl-1 px-md-4 mt-md-4 py-md-5 mt form-area">
       <form>
         <div className="mt-sm-0 mb-sm-1 divider d-flex align-items-center ">
           <span className="mx-3 text-center text-dark fw-bold" style={{fontSize: "1.5rem"}}>Sign in</span>
@@ -99,7 +99,7 @@ const FormBody = () => {
         </div>
         <GoogleLoginButton />
         <FacebookLoginButton />
-        <div className="register text-center mt-1 mb-2">
+        <div className="register text-center mt-3">
           <span className="me-2" style={{fontSize: "1.3rem"}}>Don't have account ?</span>
           <Link to="/signup" id="register" style={{fontSize: "1.3rem"}}>
             Register

@@ -16,6 +16,8 @@
     text-align: center;
     margin-left: 120px;
     display: inline-block;
+    margin-top: 5px;
+    font-size: 1.3rem;
 }
 
 .btnFacebook:hover {
@@ -102,7 +104,7 @@
         animation: fadeIn 2s;
     }
 
-    .btnFacebook {
+    /* .btnFacebook {
         width: 220px;
         height: 45px;
         border-radius: 6px;
@@ -112,7 +114,7 @@
         text-align: center;
         margin-left: 120px;
         display: inline-block;
-    }
+    } */
 
     .btnFacebook:hover {
         background: #3b5998;
