@@ -13,6 +13,8 @@ const ProductList = (props) => {
     const [cartActive, setCartActive] = useState(false);
     const { product } = props;
 
+    console.log('tes p', product._id)
+
     // Handler
     const clickHandler = () => {
         setCartActive((prevState) => true);
@@ -34,7 +36,7 @@ const ProductList = (props) => {
 
     return (
         <div className={styles.container}>
-            <Link className={styles.link}>
+            <Link to={`/products/${product._id}`} className={styles.link}>
                 <img src={props.img[0]} alt="Product" className={styles.img} />
                 <img
                     src={props.img[1]}

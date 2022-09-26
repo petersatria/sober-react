@@ -8,3 +8,5 @@ export { default as Mainpage } from './Mainpage';
 export { default as SignupPage } from './SignupPage';
 export { default as ProfilePage } from './ProfilePage';
 export { default as Login } from './Login';
+export { default as PageUnderConst } from './PageUnderConst';
+export { default as PageNotFound } from './PageNotFound';

@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
-
+import { useParams, redirect, Link } from "react-router-dom";
 import Product from "./Product";
 import BreadCumb from "../../components/BreadCumb";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import axios from "axios";
-
 import styles from './product.module.css'
-import './style.css'
-
 import { useDispatch } from 'react-redux'
 import { addCart } from '../../store/actions/CartAction'
 
@@ -26,8 +20,9 @@ const ProductDetail = (props) => {
 		"price": 0,
 		"images": []
 	}])
+	const [refresh, setRefresh] = useState(0);
+
 	const dispatch = useDispatch()
-	// console.log(product, 'test')
 
 	const [isLoading, setIsLoading] = useState(true)
 	const { id } = useParams()
@@ -36,7 +31,7 @@ const ProductDetail = (props) => {
 		getProduct()
 		getProducts()
 
-	}, [])
+	}, [refresh])
 
 	const itemsHandler = e => {
 		if (e.target.value > 10) {
@@ -49,26 +44,22 @@ const ProductDetail = (props) => {
 	}
 
 	const addToCartHandler = async () => {
-		// console.log("add to cart", items)
-
-		// const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
+		// await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
 
 		dispatch(addCart({ productId: id, quantity: items }))
-		window.location.assign('/cart')
 	}
 
 	const getProduct = async () => {
 		try {
 			const { data } = await axios.get(`http://localhost:5000/api/product/${id}`)
 
-			// console.log("from getProduct", data.product.images)
 			setProduct(data.product)
 			setProductPrice(data.product.price)
 			setProductImg(data.product.images)
+			setRefresh(prev => prev + 1)
 
 		} catch (error) {
 			console.log(error)
-			// window.location.assign('/not-found-page')
 		}
 	}
 
@@ -81,7 +72,6 @@ const ProductDetail = (props) => {
 
 		} catch (error) {
 			console.log(error)
-			// window.location.assign('/not-found-page')
 		}
 	}
 
@@ -143,7 +133,7 @@ const ProductDetail = (props) => {
 		]
 	};
 
-	const shuffled = [...productsRelated].sort(() => 0.5 - Math.random());
+	// const shuffled = [...productsRelated].sort(() => 0.5 - Math.random());
 
 	const price = productPrice.toLocaleString('id-ID', {
 		style: 'currency',
@@ -174,7 +164,7 @@ const ProductDetail = (props) => {
 							<input className={`${styles.fullWidth} ${styles.inputNum}`} type="number" name="quantity" id="quantity" min={1} max={10} onChange={itemsHandler} value={items} />
 						</div>
 						<div className="col-4 mt-5 mt-md-3 mt-lg-5">
-							<button className={`btn btn-dark ${styles.fullWidth}`} style={{ fontSize: "14px", padding: "10px" }} onClick={addToCartHandler}>Add to cart</button>
+							<Link to='/cart' className={`btn btn-dark ${styles.fullWidth}`} style={{ fontSize: "14px", padding: "10px" }} onClick={addToCartHandler} >Add to cart</Link>
 						</div>
 					</div>
 					<div className={`mt-5 mt-md-3 mt-lg-5 align-items-end ${styles.border}`}>
@@ -187,7 +177,7 @@ const ProductDetail = (props) => {
 					<div className={`mt-md-5 ${styles.border}`}>
 						<h2 className={`mt-5 ${styles.relatedProductTitle}`}>Related Products</h2>
 						<Slider {...settingsRelated}>
-							{shuffled && shuffled.slice(0, 4).map(product => (
+							{productsRelated && productsRelated.slice(0, 4).map(product => (
 								<div key={Math.random().toString() + product._id} className="mt-5 p-3">
 									<Product product={product} isLoading={isLoading} />
 								</div>
