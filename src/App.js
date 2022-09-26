@@ -8,12 +8,19 @@ import Header from "./components/Layouts/Header";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCart } from "./store/actions/CartAction";
+import { checkLogin } from "./store/actions/LoginAction";
+import { getCookie } from './moduleComponents/cookie'
 
 function App() {
   const dispatch = useDispatch();
+  const userId = JSON.parse(getCookie('userCookie'))
+  console.log(userId)
 
   useEffect(() => {
-    dispatch(getCart());
+    if(userId){
+      dispatch(getCart());
+    }
+    dispatch(checkLogin());
   }, []);
 
   return (

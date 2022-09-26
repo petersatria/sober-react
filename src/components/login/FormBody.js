@@ -5,10 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { setCookie } from "../../moduleComponents/cookie";
 import { notifications, errorNotification } from "../../moduleComponents/notification";
 import "sweetalert2/src/sweetalert2.scss";
+import { loginUser } from '../../store/actions/LoginAction'
+import { useDispatch } from 'react-redux'
 
 const FormBody = () => {
   const navigate = useNavigate();
   const axios = require("axios").default;
+  const dispatch = useDispatch()
   // state
   const [iconPass, setIconPass] = useState(false);
   const [username, setUsername] = useState("");
@@ -26,6 +29,7 @@ const FormBody = () => {
       let isNotif = await notifications(response);
       if (isNotif) {
         setCookie(`userCookie`, JSON.stringify(response.data.sendData), 1);
+        dispatch(loginUser(username))
         navigate("/");
         return;
       }
