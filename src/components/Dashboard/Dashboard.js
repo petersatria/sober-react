@@ -44,7 +44,7 @@ const Dashboard = () => {
             <p className={styles.col}>{data.thumbnail}</p>
 
             <p className={styles.col}>
-                {data.price?.toLocaleString('id-ID', {
+                {data?.price?.toLocaleString('id-ID', {
                     style: 'currency',
                     currency: 'IDR',
                 })}

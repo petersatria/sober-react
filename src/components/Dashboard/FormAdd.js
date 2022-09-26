@@ -33,6 +33,8 @@ const FormAdd = () => {
         // Insert images field
         formData.images = images;
 
+        console.log(formData);
+
         await sendRequest({
             url: 'http://localhost:5000/api/create-product',
             method: 'POST',
