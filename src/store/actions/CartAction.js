@@ -89,7 +89,6 @@ export const deleteProduct=(productId, cartId)=>{
 
 
 export const checkoutCart=({total_order,carts},userId='62dd766bcf569a60ceded351', navigate)=>{
-    console.log(total_order, carts)
     return async(dispatch,state)=>{
         let dataPost = {
             total_order,
@@ -97,15 +96,23 @@ export const checkoutCart=({total_order,carts},userId='62dd766bcf569a60ceded351'
             carts
         }
         try {
-            console.log('action checkout 1')
-    
-            await axios.post(`${url}transactionHistoryPost`, dataPost)
-            console.log('action checkout 2')
-            dispatch({
-                type:'CHECKOUT_CART'
+            const { data } = await axios.post(`${url}getTokenPayment`, {userId, total_order})
+            console.log(data)
+            window.snap.pay(data, {
+                onSuccess:async()=>{
+                    console.log('success')
+                    await axios.post(`${url}transactionHistoryPost`, dataPost)
+                    dispatch({
+                        type:'CHECKOUT_CART'
+                    })
+        
+                    navigate('/order-list/'+userId)
+                },
+                onClose: function () {
+                    // muncul ketika event snap di close
+                    console.log('closed failed')
+                }
             })
-
-            navigate('/order-list/'+userId)
             
         } catch (error) {
             console.log(error)
