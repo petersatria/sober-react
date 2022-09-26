@@ -53,7 +53,7 @@ const ProductDetail = (props) => {
 
 		// const post = await axios.post('http://localhost:5000/cart', { productId: id, quantity: items })
 
-		dispatch(addCart({ productId: id, quantity: items}))
+		dispatch(addCart({ productId: id, quantity: items }))
 		window.location.assign('/cart')
 	}
 
@@ -174,7 +174,7 @@ const ProductDetail = (props) => {
 							<input className={`${styles.fullWidth} ${styles.inputNum}`} type="number" name="quantity" id="quantity" min={1} max={10} onChange={itemsHandler} value={items} />
 						</div>
 						<div className="col-4 mt-5 mt-md-3 mt-lg-5">
-							<button className={`btn btn-dark ${styles.fullWidth}`} onClick={addToCartHandler}>Add to cart</button>
+							<button className={`btn btn-dark ${styles.fullWidth}`} style={{ fontSize: "14px", padding: "10px" }} onClick={addToCartHandler}>Add to cart</button>
 						</div>
 					</div>
 					<div className={`mt-5 mt-md-3 mt-lg-5 align-items-end ${styles.border}`}>
