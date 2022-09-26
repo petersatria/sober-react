@@ -1,13 +1,13 @@
 import styles from '../css/Cart.module.css'
-import { Test } from './index'
-import { changeQty, deleteProduct,getCart } from '../store/actions/CartAction'
+import { changeQty, deleteProduct,getCart, checkoutCart } from '../store/actions/CartAction'
 import { useSelector,useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import Header from '../components/Layouts/Header'
+import { useNavigate } from 'react-router-dom'
+
 export default function Cart(){
     const { carts } = useSelector(state=>state.cart)
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
 
     useEffect(()=>{
         dispatch(getCart())
@@ -33,6 +33,10 @@ export default function Cart(){
         });
 
         return count
+    }
+
+    const onCheckoutCart=()=>{
+        dispatch(checkoutCart({total_order:getTotal(), carts},undefined,navigate))
     }
     
     return(
@@ -101,7 +105,7 @@ export default function Cart(){
                                 <div>Total</div>
                                 <div>$ {getTotal()}</div>
                             </div>
-                            <button className={`${styles.buttonCheckout} mt-5`}>Checkout</button>
+                            <button onClick={onCheckoutCart} className={`${styles.buttonCheckout} mt-5`}>Checkout</button>
                         </div>
                     </div>
                 </div>

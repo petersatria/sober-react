@@ -12,6 +12,9 @@ function reducer(state=INITIAL_STATE,action){
             return {...state, carts:action.payload}
         case 'DELETE_PRODUCT_IN_CARTS':
             return {...state, carts:action.payload}
+        case 'CHECKOUT_CART':
+            console.log('masuk')
+            return{...state, carts:[]}
         default:
             return state
     }
