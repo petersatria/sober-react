@@ -41,7 +41,7 @@ function App() {
         <Route path="profile/:id" element={<ProfilePage />}>
           <Route index path="details" element={<ProfileDetail />} />
           <Route path="settings" element={<ProfileEdit />} />
-          <Route path="order-list" element={<OrderList />} />
+          <Route path="order-list/:userId" element={<OrderList />} />
         </Route>
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormDashboard />} />
