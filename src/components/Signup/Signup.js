@@ -7,6 +7,8 @@ import ValidationFunction from '../GeneralUI/ValidationFunction';
 
 import styles from './Signup.module.css';
 
+import hostUrl from '../../url';
+
 const Signup = () => {
     // Fetch hook
     const { sendRequest, pending, result, status } = useFetch();
@@ -43,7 +45,7 @@ const Signup = () => {
 
         sendRequest({
             method: 'POST',
-            url: 'http://localhost:5000/api/user/signup',
+            url: `${hostUrl}/api/user/signup`,
             data: registerInput,
         });
 

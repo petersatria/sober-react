@@ -5,33 +5,31 @@ import styles from './ProductList.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCart } from '../../store/actions/CartAction'
+import { addCart } from '../../store/actions/CartAction';
 
 const ProductList = (props) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     // State
     const [cartActive, setCartActive] = useState(false);
-    const { product } = props
+    const { product } = props;
 
     // Handler
     const clickHandler = () => {
         setCartActive((prevState) => true);
         const dataCart = {
-            productId:product._id,
-            quantity:1,
-            cartId:`632cb38f55b627d11bc08d8f`
-        }
+            productId: product._id,
+            quantity: 1,
+            cartId: `632cb38f55b627d11bc08d8f`,
+        };
 
-        dispatch(addCart(dataCart))
-
+        dispatch(addCart(dataCart));
     };
 
     // Props
-    const price = props.price.toLocaleString('id-ID', {
+    const price = props.price?.toLocaleString('id-ID', {
         style: 'currency',
         currency: 'IDR',
     });
-
 
     return (
         <div className={styles.container}>

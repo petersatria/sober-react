@@ -3,6 +3,7 @@ import { useState } from 'react';
 import useFetch from '../../hooks/use-fetch';
 
 import FormDashboard from './FormDashboard';
+import hostUrl from '../../url';
 
 const FormAdd = () => {
     // State
@@ -36,7 +37,7 @@ const FormAdd = () => {
         console.log(formData);
 
         await sendRequest({
-            url: 'http://localhost:5000/api/create-product',
+            url: `${hostUrl}/api/create-product`,
             method: 'POST',
             data: formData,
         });
