@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage, Login } from "./pages/index";
 import { ProfileEdit, ProfileDetail } from "./components/Profile";
@@ -7,6 +8,23 @@ import Header from "./components/Layouts/Header";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCart } from "./store/actions/CartAction";
+=======
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
+import { Homepage, Test, ProductDetail, ProductList, OrderList, Cart, SignupPage, Mainpage, ProfilePage } from './pages/index'
+import { ProfileEdit, ProfileDetail } from './components/Profile'
+import Dashboard from './components/Dashboard/Dashboard';
+import FormDashboard from './components/Dashboard/FormDashboard';
+import Header from './components/Layouts/Header'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { getCart } from './store/actions/CartAction'
+
+>>>>>>> 4accc7fb8d309c8c82ecb475316d432739a608e5
 
 function App() {
   const dispatch = useDispatch();

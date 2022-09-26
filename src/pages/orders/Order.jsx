@@ -10,7 +10,7 @@ const Order = (props) => {
 		setProduct(props.product)
 		setProductImage(props.product.images)
 	}, [])
-
+	console.log(props)
 	return (
 		<div className={`m-5 ${styles.wrapperCard}`}>
 			<div className="card-body">
@@ -41,7 +41,7 @@ const Order = (props) => {
 						</div>
 					</div>
 					<div className="col-md-3 align-self-center ps-0 pe-4">
-						<p className={`text-end m-0 ${styles.productPrice}`}>Rp{props.productTrans.subTotal}</p>
+						<p className={`text-end m-0 ${styles.productPrice}`}>Rp{props.productTrans.price*props.productTrans.quantity}</p>
 					</div>
 				</div>
 			</div>
