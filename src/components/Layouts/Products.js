@@ -1,10 +1,13 @@
+import { useEffect, useState } from 'react';
+import useFetch from '../../hooks/use-fetch';
+
 import ProductList from '../ProductList/ProductList';
 
 import styles from './Products.module.css';
 
+import hostUrl from '../../url';
+
 import dumData from '../../assets/dummy_data.json';
-import { useEffect, useState } from 'react';
-import useFetch from '../../hooks/use-fetch';
 
 const ProductsBestSeller = () => {
     // State
@@ -20,7 +23,7 @@ const ProductsBestSeller = () => {
         };
 
         const reqConfig = {
-            url: 'http://localhost:5000/api/products',
+            url: `${hostUrl}/api/products`,
             method: 'GET',
         };
 

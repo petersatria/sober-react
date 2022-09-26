@@ -1,10 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
-
-import styles from './Dashboard.module.css';
 import { Fragment, useEffect, useState } from 'react';
 import useFetch from '../../hooks/use-fetch';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link, Outlet } from 'react-router-dom';
+
+import styles from './Dashboard.module.css';
+import hostUrl from '../../url';
 
 const Dashboard = () => {
     const [data, setData] = useState([]);
@@ -13,7 +15,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const reqConfig = {
-            url: 'http://localhost:5000/api/product',
+            url: `${hostUrl}/api/product`,
             method: 'GET',
         };
 
@@ -26,7 +28,7 @@ const Dashboard = () => {
 
     const deleteHandler = function () {
         sendRequest({
-            url: `http://localhost:5000/api/delete-product/${this}`,
+            url: `${hostUrl}/api/delete-product/${this}`,
             method: 'DELETE',
         });
 
@@ -44,7 +46,7 @@ const Dashboard = () => {
             <p className={styles.col}>{data.thumbnail}</p>
 
             <p className={styles.col}>
-                {data.price?.toLocaleString('id-ID', {
+                {data?.price?.toLocaleString('id-ID', {
                     style: 'currency',
                     currency: 'IDR',
                 })}

@@ -5,6 +5,8 @@ import useFetch from '../../hooks/use-fetch';
 
 import FormDashboard from './FormDashboard';
 
+import hostUrl from '../../url';
+
 const FormUpdate = () => {
     // Params
     const params = useParams();
@@ -19,7 +21,7 @@ const FormUpdate = () => {
     // Side effect
     useEffect(() => {
         const reqConfig = {
-            url: `http://localhost:5000/api/product/${params.productId}`,
+            url: `${hostUrl}/api/product/${params.productId}`,
             method: 'GET',
         };
 
@@ -59,7 +61,7 @@ const FormUpdate = () => {
         };
 
         await sendRequest({
-            url: `http://localhost:5000/api/edit-data/${params.productId}`,
+            url: `${hostUrl}/api/edit-data/${params.productId}`,
             method: 'PATCH',
             data: updatedData,
         });
