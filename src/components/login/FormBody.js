@@ -46,6 +46,7 @@ const FormBody = () => {
   // Function for JSX
   const passIconTrigger = () => (
     <input
+    style={{fontSize: "1.7rem"}}
       type={iconPass ? "text" : "password"}
       id="password"
       className="form-control form-control-lg"
@@ -74,8 +75,8 @@ const FormBody = () => {
             onChange={(e) => {
               setUsername(e.target.value);
             }}
-            className="form-control form-control-lg"
-            style={{fontSize: "2rem"}}
+            className="form-control form-control-lg py-2"
+            style={{fontSize: "1.8rem"}}
           />
         </div>
         {/* <!-- Password input --> */}
