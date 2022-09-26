@@ -38,13 +38,13 @@ const FacebookLoginButton = () => {
       } catch (error) {
         if (error.response) {
           try {
-            const responseRegister = await axios.post("http://localhost:5000/register", {
+            const responseRegister = await axios.post("http://localhost:5000/api/user/signup", {
               username: facebookUsername,
               email: facebookEmail,
+              name: facebookUsername,
               password: facebookPassword,
-              role: facebookRole,
             });
-            if (responseRegister.data.statusCode === 200) {
+            if (responseRegister.data.status === "success") {
               try {
                 const response = await axios.post("http://localhost:5000/socialLogin", {
                   email: facebookEmail,

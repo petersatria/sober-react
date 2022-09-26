@@ -47,13 +47,14 @@ const GoogleLoginButton = () => {
       } catch (error) {
         if (error.response) {
           try {
-            const responseRegister = await axios.post("http://localhost:5000/register", {
+            const responseRegister = await axios.post("http://localhost:5000/api/user/signup", {
               username: googleUsername,
               email: googleEmail,
               password: googlePassword,
-              role: googleRole,
+              name: googleUsername,
             });
-            if (responseRegister.data.statusCode === 200) {
+            console.log(responseRegister)
+            if (responseRegister.data.status === "success") {
               try {
                 const response = await axios.post("http://localhost:5000/socialLogin", {
                   email: googleEmail,
@@ -87,7 +88,8 @@ const GoogleLoginButton = () => {
     if (googleEmail && googlePassword !== "") {
       userGoogle();
     }
-  }, [googleEmail, googlePassword, googleUsername, googleRole]);
+    console.log(googleEmail)
+  }, [googleEmail, googlePassword, googleUsername]);
 
   return <div id="google-btn" className="mb-2"></div>;
 };
