@@ -10,6 +10,16 @@
     
 }
 
+.list button{
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    line-height: 4rem;
+    font-weight: 500;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
 .list a{
     text-decoration: none;
     line-height: 4rem;

@@ -7,7 +7,7 @@ function ProfileHeader() {
     <div className={style.headers}>
       <div className='container'>
         <ul className={style.listheader}>
-            <li><h2>My Account</h2></li>
+            <li>My Account</li>
         </ul>
       </div>
     </div>

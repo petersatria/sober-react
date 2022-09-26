@@ -51,8 +51,9 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="profile/:id" element={<ProfilePage />}>
-          <Route index path={'details'} element={<ProfileDetail />} />
-          <Route path={'settings'} element={<ProfileEdit />} />
+          <Route index path="details" element={<ProfileDetail />} />
+          <Route path="settings" element={<ProfileEdit />} />
+          <Route path="order-list/:userId" element={<OrderList />} />
         </Route>
         <Route path="/admin" element={<Dashboard />}>
           <Route path="edit/:productId" element={<FormUpdate />} />

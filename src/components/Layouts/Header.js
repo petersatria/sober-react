@@ -94,7 +94,7 @@ const Header = () => {
                         isLoggedIn?
                         <>
                             <li className={styles.item}>
-                            <NavLink to={`/profile/${cookie.id}`} className={styles['sub-link']}>{username}</NavLink>
+                            <NavLink to={`/profile/${cookie.id}/details`} className={styles['sub-link']}>{username}</NavLink>
 
                             </li>
                             <li className={styles.item} onClick={onLogoutClick}>

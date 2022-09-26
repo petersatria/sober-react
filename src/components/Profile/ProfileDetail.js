@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
+
 import style from './ProfileDetail.module.css'
 function ProfileDetail() {
   const [name, setName] = useState('');
@@ -11,18 +12,19 @@ function ProfileDetail() {
   const [birthdate, setBirtdate] = useState('');  
   
  const {id}= useParams()
-
+console.log(id)
   useEffect(() => {
-   Getdata()
+   Getdata(id)
   },[])
 
-  const Getdata = async (id) => {
+  const Getdata = async (idUser) => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/datauser/' + id);
-      setName(data.result.name);
-      setUsername(data.result.username);
-      setEmail(data.result.email);
-      setBirtdate(data.result.birthdate);
+      const { data } = await axios.get('http://localhost:5000/api/profile/' + idUser);
+      
+      setName(data.data.name);
+      setUsername(data.data.username);
+      setEmail(data.data.email);
+      setBirtdate(data.data.birthdate);
       
     } catch (error) {
       console.log(error)
