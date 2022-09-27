@@ -36,7 +36,7 @@ const ProductList = (props) => {
 
     return (
         <div className={styles.container}>
-            <Link to={`/products/${product._id}`} className={styles.link}>
+            <Link to={`/products/${product._id}`} className={styles.link} onClick={(() => { window.scrollTo(0, 0) })}>
                 <img src={props.img[0]} alt="Product" className={styles.img} />
                 <img
                     src={props.img[1]}

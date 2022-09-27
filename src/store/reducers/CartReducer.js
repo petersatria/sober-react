@@ -1,20 +1,22 @@
 const INITIAL_STATE = {
-    carts:[]
+    carts: []
 }
 
-function reducer(state=INITIAL_STATE,action){
-    switch(action.type){
+function reducer(state = INITIAL_STATE, action) {
+    switch (action.type) {
         case 'FETCH_CART':
-            return {...state, carts:action.payload}
+            return { ...state, carts: action.payload }
         case 'ADD_TO_CART':
-            return {...state, carts:action.payload}
+            return { ...state, carts: action.payload }
         case 'CHANGE_QUANTITY':
-            return {...state, carts:action.payload}
+            return { ...state, carts: action.payload }
         case 'DELETE_PRODUCT_IN_CARTS':
-            return {...state, carts:action.payload}
+            return { ...state, carts: action.payload }
         case 'CHECKOUT_CART':
-            console.log('masuk')
-            return{...state, carts:[]}
+            return { ...state, carts: [] }
+        case 'LOGOUT':
+            return { ...state, carts: [] }
+
         default:
             return state
     }
