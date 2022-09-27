@@ -21,7 +21,7 @@ const FormUpdate = () => {
     // Side effect
     useEffect(() => {
         const reqConfig = {
-            url: `${hostUrl}/api/product/${params.productId}`,
+            url: `${hostUrl}api/product/${params.productId}`,
             method: 'GET',
         };
 
@@ -61,7 +61,7 @@ const FormUpdate = () => {
         };
 
         await sendRequest({
-            url: `${hostUrl}/api/edit-data/${params.productId}`,
+            url: `${hostUrl}api/edit-data/${params.productId}`,
             method: 'PATCH',
             data: updatedData,
         });

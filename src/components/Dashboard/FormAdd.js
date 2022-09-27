@@ -37,7 +37,7 @@ const FormAdd = () => {
         console.log(formData);
 
         await sendRequest({
-            url: `${hostUrl}/api/create-product`,
+            url: `${hostUrl}api/create-product`,
             method: 'POST',
             data: formData,
         });

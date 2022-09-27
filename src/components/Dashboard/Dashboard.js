@@ -15,7 +15,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const reqConfig = {
-            url: `${hostUrl}/api/product`,
+            url: `${hostUrl}api/product`,
             method: 'GET',
         };
 
@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     const deleteHandler = function () {
         sendRequest({
-            url: `${hostUrl}/api/delete-product/${this}`,
+            url: `${hostUrl}api/delete-product/${this}`,
             method: 'DELETE',
         });
 

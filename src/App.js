@@ -28,9 +28,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/main/home" />} />
-        <Route path="/main/*" element={<Mainpage />}>
-          <Route path="home" element={<Homepage />} />
+        <Route element={<Mainpage />}>
+          <Route path="/" element={<Homepage />} />
           <Route path="products" element={<ProductList />} />
           <Route path="features" element={<PageUnderConst />} />
           <Route path="pages" element={<PageUnderConst />} />

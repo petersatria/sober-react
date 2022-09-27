@@ -52,7 +52,7 @@ const Header = () => {
             <nav className={styles.nav}>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <NavLink to="main/home" className={navStyle}>
+                        <NavLink to="/" className={navStyle}>
                             Home
                         </NavLink>
                     </li>
@@ -64,19 +64,19 @@ const Header = () => {
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="main/features" className={navStyle}>
+                        <NavLink to="features" className={navStyle}>
                             Features
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="main/pages" className={navStyle}>
+                        <NavLink to="pages" className={navStyle}>
                             Pages
                         </NavLink>
                     </li>
 
                     <li className={styles.item}>
-                        <NavLink to="main/blog" className={navStyle}>
+                        <NavLink to="blog" className={navStyle}>
                             Blog
                         </NavLink>
                     </li>
@@ -84,7 +84,7 @@ const Header = () => {
             </nav>
 
             <div>
-                <NavLink to="main/home"> <img src={brandLogo} onClick={scrollUpPage} alt="Brand Logo" /> </NavLink>
+                <NavLink to="/"> <img src={brandLogo} onClick={scrollUpPage} alt="Brand Logo" /> </NavLink>
             </div>
 
             <nav className={styles.nav}>

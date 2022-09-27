@@ -23,7 +23,7 @@ const ProductsBestSeller = () => {
         };
 
         const reqConfig = {
-            url: `${hostUrl}/api/products`,
+            url: `${hostUrl}api/products`,
             method: 'GET',
         };
 
