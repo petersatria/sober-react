@@ -58,7 +58,7 @@ const Signup = () => {
 
         sendRequest({
             method: 'POST',
-            url: `${hostUrl}/api/user/signup`,
+            url: `${hostUrl}api/user/signup`,
             data: registerInput,
         });
 
