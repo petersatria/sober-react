@@ -1,3 +1,3 @@
-const hostUrl = 'http://localhost:5000';
+const hostUrl = `${process.env.REACT_APP_URL}`;
 
 export default hostUrl;

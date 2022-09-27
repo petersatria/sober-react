@@ -25,7 +25,7 @@ const FacebookLoginButton = () => {
   useEffect(() => {
     const userFacebook = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/socialLogin", {
+        const response = await axios.post(`${process.env.REACT_APP_URL}socialLogin`, {
           email: facebookEmail,
           password: facebookPassword,
         });
@@ -38,7 +38,7 @@ const FacebookLoginButton = () => {
       } catch (error) {
         if (error.response) {
           try {
-            const responseRegister = await axios.post("http://localhost:5000/api/user/signup", {
+            const responseRegister = await axios.post(`${process.env.REACT_APP_URL}api/user/signup`, {
               username: facebookUsername,
               email: facebookEmail,
               name: facebookUsername,
@@ -46,7 +46,7 @@ const FacebookLoginButton = () => {
             });
             if (responseRegister.data.status === "success") {
               try {
-                const response = await axios.post("http://localhost:5000/socialLogin", {
+                const response = await axios.post(`${process.env.REACT_APP_URL}socialLogin`, {
                   email: facebookEmail,
                   password: facebookPassword,
                 });

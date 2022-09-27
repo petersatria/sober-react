@@ -53,7 +53,7 @@ const ProductDetail = (props) => {
 
 	const getProduct = async () => {
 		try {
-			const { data } = await axios.get(`http://localhost:5000/api/product/${id}`)
+			const { data } = await axios.get(`${process.env.REACT_APP_URL}api/product/${id}`)
 
 			setProduct(data.product)
 			setProductPrice(data.product.price)
@@ -66,7 +66,7 @@ const ProductDetail = (props) => {
 
 	const getProducts = async () => {
 		try {
-			const { data } = await axios.get('http://localhost:5000/api/product')
+			const { data } = await axios.get(`${process.env.REACT_APP_URL}api/product`)
 
 			setProductsRelated(data.result)
 			setIsLoading(false)

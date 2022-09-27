@@ -14,7 +14,7 @@ const ProductList = (props) => {
 
 	const getProducts = async () => {
 		try {
-			const { data } = await axios.get('http://localhost:5000/api/product')
+			const { data } = await axios.get(`${process.env.REACT_APP_URL}api/product`)
 
 			setProducts(data.result)
 			setIsLoading(false)

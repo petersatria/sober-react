@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { getCookie } from '../../moduleComponents/cookie'
-const url = `http://localhost:5000/`
+const url = `${process.env.REACT_APP_URL}`
 
 export const getCart = () => {
     const token = JSON.parse(getCookie('userCookie'))

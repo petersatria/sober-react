@@ -34,7 +34,7 @@ const GoogleLoginButton = () => {
   useEffect(() => {
     const userGoogle = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/socialLogin", {
+        const response = await axios.post(`${process.env.REACT_APP_URL}socialLogin`, {
           email: googleEmail,
           password: googlePassword,
         });
@@ -47,7 +47,7 @@ const GoogleLoginButton = () => {
       } catch (error) {
         if (error.response) {
           try {
-            const responseRegister = await axios.post("http://localhost:5000/api/user/signup", {
+            const responseRegister = await axios.post(`${process.env.REACT_APP_URL}api/user/signup`, {
               username: googleUsername,
               email: googleEmail,
               password: googlePassword,
@@ -56,7 +56,7 @@ const GoogleLoginButton = () => {
             console.log(responseRegister)
             if (responseRegister.data.status === "success") {
               try {
-                const response = await axios.post("http://localhost:5000/socialLogin", {
+                const response = await axios.post(`${process.env.REACT_APP_URL}socialLogin`, {
                   email: googleEmail,
                   password: googlePassword,
                 });
